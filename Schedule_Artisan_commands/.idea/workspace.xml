@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4a98f4fd-1462-47c5-abc4-655122f231be" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Schedule + Artisan commands.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test1" beforeDir="false" afterPath="$PROJECT_DIR$/test1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test1/README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/test1/app/Console/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/test1/app/Console/Kernel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test1/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/test1/routes/web.php" afterDir="false" />
@@ -19,7 +15,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/test1/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -167,6 +163,7 @@
       <option name="presentableId" value="Default" />
       <updated>1675345336275</updated>
       <workItem from="1675345338596" duration="4206000" />
+      <workItem from="1675349587818" duration="317000" />
     </task>
     <servers />
   </component>
