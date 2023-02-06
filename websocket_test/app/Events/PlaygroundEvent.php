@@ -22,6 +22,7 @@ class PlaygroundEvent implements ShouldBroadcast
     public function __construct($message)
     {
         $this->message = $message;
+        echo $this->message;
     }
 
     /**
