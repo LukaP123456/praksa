@@ -4,8 +4,6 @@ namespace App\Events;
 
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;
-use Illuminate\Broadcasting\PresenceChannel;
-use Illuminate\Broadcasting\PrivateChannel;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
@@ -14,14 +12,16 @@ class PlaygroundEvent implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
+    public $message;
+
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($message)
     {
-        echo "fired";
+        $this->message = $message;
     }
 
     /**
@@ -32,15 +32,16 @@ class PlaygroundEvent implements ShouldBroadcast
     {
         return new Channel('public.playground.1');
     }
+
     public function broadcastAs()
     {
-        return 'playground';
+        return 'playground_' . $this->message;
     }
 
     public function broadcastWith()
     {
         return [
-            'heya'=>123
+            'poruka' => $this->message
         ];
     }
 }
