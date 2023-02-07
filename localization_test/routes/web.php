@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+Route::redirect('/', '/en');
+
+Route::group(['prefix' => '{language}'], function () {
+
 });
+
+Route::get('/profile', function () {
+    return view('profile');
+});
+
+Route::get('/profile/{lang}', function ($lang) {
+    App::setLocale($lang);
+    return view('profile');
+});
+

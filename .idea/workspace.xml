@@ -5,91 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3403da03-f0c8-4a73-9094-15bcc35c7730" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/guzzle_test/.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/.env.example" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/.gitattributes" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/app/Console/Kernel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/app/Exceptions/Handler.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/app/Http/Controllers/Controller.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/app/Http/Kernel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/app/Http/Middleware/Authenticate.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/app/Http/Middleware/EncryptCookies.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/app/Http/Middleware/PreventRequestsDuringMaintenance.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/app/Http/Middleware/RedirectIfAuthenticated.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/app/Http/Middleware/TrimStrings.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/app/Http/Middleware/TrustHosts.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/app/Http/Middleware/TrustProxies.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/app/Http/Middleware/ValidateSignature.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/app/Http/Middleware/VerifyCsrfToken.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/app/Models/User.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/app/Providers/AuthServiceProvider.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/app/Providers/BroadcastServiceProvider.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/app/Providers/EventServiceProvider.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/app/Providers/RouteServiceProvider.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/artisan" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/bootstrap/app.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/bootstrap/cache/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/composer.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/composer.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/config/app.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/config/auth.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/config/broadcasting.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/config/cache.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/config/cors.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/config/database.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/config/filesystems.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/config/hashing.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/config/logging.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/config/mail.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/config/queue.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/config/sanctum.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/config/services.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/config/session.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/config/view.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/database/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/database/factories/UserFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/database/migrations/2014_10_12_100000_create_password_resets_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/database/migrations/2019_08_19_000000_create_failed_jobs_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/database/migrations/2019_12_14_000001_create_personal_access_tokens_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/database/seeders/DatabaseSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/lang/en/auth.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/lang/en/pagination.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/lang/en/passwords.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/lang/en/validation.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/phpunit.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/public/.htaccess" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/public/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/public/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/public/robots.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/resources/css/app.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/resources/js/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/resources/js/bootstrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/resources/views/welcome.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/routes/api.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/routes/channels.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/routes/console.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/routes/web.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/storage/app/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/storage/app/public/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/storage/framework/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/storage/framework/cache/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/storage/framework/cache/data/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/storage/framework/sessions/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/storage/framework/testing/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/storage/framework/views/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/storage/logs/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/tests/CreatesApplication.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/tests/Feature/ExampleTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/tests/TestCase.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/tests/Unit/ExampleTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guzzle_test/vite.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/websocket_test/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/websocket_test/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_maps_test/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/google_maps_test/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_maps_test/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/google_maps_test/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_maps_test/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/google_maps_test/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_maps_test/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/google_maps_test/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guzzle_test/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/guzzle_test/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/localization_test/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/localization_test/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/localization_test/lang/chin/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/localization_test/lang/chin/profile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/localization_test/lang/en/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/localization_test/lang/en/profile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/localization_test/lang/fren.json" beforeDir="false" afterPath="$PROJECT_DIR$/localization_test/lang/fren.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/localization_test/lang/srp/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/localization_test/lang/srp/profile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/localization_test/resources/views/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/localization_test/resources/views/profile.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/localization_test/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/localization_test/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/s3_storage_test/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/s3_storage_test/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/s3_storage_test/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/s3_storage_test/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/s3_storage_test/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/s3_storage_test/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -237,22 +169,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "rearrange.code.on.save": "true",
-    "settings.editor.selected.configurable": "preferences.keymap",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="app.php" />
@@ -270,7 +202,9 @@
       <workItem from="1675410252509" duration="6095000" />
       <workItem from="1675417660090" duration="26000" />
       <workItem from="1675417709639" duration="9935000" />
-      <workItem from="1675428787190" duration="7339000" />
+      <workItem from="1675428787190" duration="7540000" />
+      <workItem from="1675668101841" duration="17470000" />
+      <workItem from="1675763616166" duration="56000" />
     </task>
     <servers />
   </component>

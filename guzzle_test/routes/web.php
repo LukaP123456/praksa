@@ -26,6 +26,6 @@ Route::get('/guzzle', function () {
     ]);
 
     $response = Http::get('https://dummyjson.com/products/');
-    dd($response);
+    dd($res);
 });
 

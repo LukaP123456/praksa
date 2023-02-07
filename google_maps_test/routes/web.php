@@ -1,5 +1,6 @@
 <?php
 
+use GoogleMaps\GoogleMaps;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+
+    $result = new GoogleMaps();
+    dd($result);
+//    $result2 = $result->load('geocoding')->setParam(['address' => 'gunduliceva 63'])->get();
+    $result2 = $result->load('geocoding');
+    dd($result2);
+//    return \GoogleMaps::load('geocoding')
+//        ->setParam([
+//            'address' => 'gunduliceva 63',
+//        ])
+//        ->get();
 });
