@@ -5,23 +5,99 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3403da03-f0c8-4a73-9094-15bcc35c7730" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test/app/Http/Controllers/GoogleController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test/resources/views/googleAutocomplete.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/.env.example" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/app/Console/Kernel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/app/Exceptions/Handler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/app/Http/Controllers/Controller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/app/Http/Kernel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/app/Http/Middleware/Authenticate.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/app/Http/Middleware/EncryptCookies.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/app/Http/Middleware/PreventRequestsDuringMaintenance.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/app/Http/Middleware/RedirectIfAuthenticated.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/app/Http/Middleware/TrimStrings.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/app/Http/Middleware/TrustHosts.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/app/Http/Middleware/TrustProxies.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/app/Http/Middleware/ValidateSignature.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/app/Http/Middleware/VerifyCsrfToken.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/app/Models/User.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/app/Providers/AuthServiceProvider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/app/Providers/BroadcastServiceProvider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/app/Providers/EventServiceProvider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/app/Providers/RouteServiceProvider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/artisan" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/bootstrap/app.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/bootstrap/cache/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/composer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/composer.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/config/app.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/config/auth.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/config/broadcasting.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/config/cache.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/config/cors.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/config/database.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/config/filesystems.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/config/googlemaps.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/config/hashing.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/config/logging.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/config/mail.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/config/queue.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/config/sanctum.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/config/services.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/config/session.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/config/view.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/database/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/database/factories/UserFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/database/migrations/2014_10_12_100000_create_password_resets_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/database/migrations/2019_08_19_000000_create_failed_jobs_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/database/migrations/2019_12_14_000001_create_personal_access_tokens_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/lang/en/auth.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/lang/en/pagination.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/lang/en/passwords.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/lang/en/validation.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/phpunit.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/public/.htaccess" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/public/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/public/robots.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/resources/css/app.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/resources/js/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/resources/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/resources/views/welcome.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/routes/api.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/routes/channels.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/routes/console.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/routes/web.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/storage/app/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/storage/app/public/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/storage/framework/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/storage/framework/cache/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/storage/framework/cache/data/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/storage/framework/sessions/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/storage/framework/testing/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/storage/framework/views/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/storage/logs/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/tests/CreatesApplication.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/tests/Feature/ExampleTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/tests/TestCase.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/tests/Unit/ExampleTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/google_maps_test2/vite.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/google_maps_test/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/google_maps_test/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/google_maps_test/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/google_maps_test/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/google_maps_test/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/google_maps_test/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_maps_test/config/googlemaps.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/google_maps_test/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/google_maps_test/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guzzle_test/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/guzzle_test/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/localization_test/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/localization_test/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/localization_test/lang/chin/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/localization_test/lang/chin/profile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/localization_test/lang/en/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/localization_test/lang/en/profile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/localization_test/lang/fren.json" beforeDir="false" afterPath="$PROJECT_DIR$/localization_test/lang/fren.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/localization_test/lang/srp/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/localization_test/lang/srp/profile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/localization_test/resources/views/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/localization_test/resources/views/profile.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/localization_test/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/localization_test/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/s3_storage_test/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/s3_storage_test/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/s3_storage_test/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/s3_storage_test/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/s3_storage_test/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/s3_storage_test/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,22 +245,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "rearrange.code.on.save": "true",
+    "settings.editor.selected.configurable": "actions.on.save",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="app.php" />
@@ -205,6 +281,8 @@
       <workItem from="1675428787190" duration="7540000" />
       <workItem from="1675668101841" duration="17470000" />
       <workItem from="1675763616166" duration="56000" />
+      <workItem from="1675763760129" duration="944000" />
+      <workItem from="1675766164059" duration="4245000" />
     </task>
     <servers />
   </component>

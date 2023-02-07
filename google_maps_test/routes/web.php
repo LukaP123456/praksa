@@ -1,6 +1,6 @@
 <?php
 
-use GoogleMaps\GoogleMaps;
+use App\Http\Controllers\GoogleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,15 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-
-    $result = new GoogleMaps();
-    dd($result);
-//    $result2 = $result->load('geocoding')->setParam(['address' => 'gunduliceva 63'])->get();
-    $result2 = $result->load('geocoding');
-    dd($result2);
-//    return \GoogleMaps::load('geocoding')
-//        ->setParam([
-//            'address' => 'gunduliceva 63',
-//        ])
-//        ->get();
+    return view('welcome');
 });
+
+Route::get('/google-autocomplete', [GoogleController::class, 'index']);
