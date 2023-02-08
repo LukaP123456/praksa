@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3403da03-f0c8-4a73-9094-15bcc35c7730" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/example-project-directory/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example-project-directory/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example-project-directory/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example-project-directory/composer.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example-project-directory/composer.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_test/server.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-project-directory/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/example-project-directory/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-project-directory/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/example-project-directory/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example-project-directory/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example-project-directory/composer.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,7 +169,7 @@
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;actions.on.save&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -198,6 +197,8 @@
       <workItem from="1675766164059" duration="4245000" />
       <workItem from="1675771247553" duration="4577000" />
       <workItem from="1675777587318" duration="1388000" />
+      <workItem from="1675779305020" duration="1432000" />
+      <workItem from="1675848859331" duration="3409000" />
     </task>
     <servers />
   </component>
