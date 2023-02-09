@@ -16,17 +16,47 @@
     </style>
 </head>
 <script src="https://maps.googleapis.com/maps/api/js?key={{env('GOOGLE_MAP_KEY')}}"></script>
+{{--<script>--}}
+{{--    async function initMap() {--}}
+{{--        let address = document.getElementById('address').value--}}
+{{--        console.log(address)--}}
+{{--        const response = await fetch('http://127.0.0.1:8000/api/map/coordinates/' + address, {--}}
+{{--            method: 'POST',--}}
+{{--            headers: {--}}
+{{--                'Content-Type': 'application/json'--}}
+{{--            },--}}
+{{--            body: JSON.stringify({--}}
+{{--                address: document.getElementById('address').value--}}
+{{--            })--}}
+{{--        });--}}
+{{--        const data = await response.json();--}}
+
+{{--        let lat = data.latitude;--}}
+{{--        let lng = data.longitude;--}}
+{{--        let myLatLng = {lat: lat, lng: lng};--}}
+
+{{--        let map = new google.maps.Map(document.getElementById('map'), {--}}
+{{--            zoom: 8,--}}
+{{--            center: myLatLng--}}
+{{--        });--}}
+
+{{--        let marker = new google.maps.Marker({--}}
+{{--            position: myLatLng,--}}
+{{--            map: map--}}
+{{--        });--}}
+{{--    }--}}
+{{--</script>--}}
+
 <script>
-    async function initMap() {
-        let address = document.getElementById('address').value
-        console.log(address)
-        const response = await fetch('http://127.0.0.1:8000/api/map/coordinates/' + address, {
+    async function initMap(callback) {
+        let address = document.getElementById('address').value;
+        const response = await fetch('http://127.0.0.1:8000/api/map/coordinates', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                address: document.getElementById('address').value
+                address: address
             })
         });
         const data = await response.json();
@@ -34,7 +64,6 @@
         let lat = data.latitude;
         let lng = data.longitude;
         let myLatLng = {lat: lat, lng: lng};
-
         let map = new google.maps.Map(document.getElementById('map'), {
             zoom: 8,
             center: myLatLng
@@ -44,7 +73,22 @@
             position: myLatLng,
             map: map
         });
+
+        map.addListener('click', function (e) {
+            placeMarker(e.latLng, map);
+        });
+
+        function placeMarker(position, map) {
+            var marker = new google.maps.Marker({
+                position: position,
+                map: map
+            });
+            map.panTo(position);
+            console.log(position)
+        }
     }
+
+
 </script>
 <body>
 Address: <input type="text" id="address" value="Seattle, WA"><br>
