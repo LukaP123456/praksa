@@ -49,7 +49,9 @@
 
 <script>
     async function initMap(callback) {
+        //Get value from input field
         let address = document.getElementById('address').value;
+        //Send the request with data to the api
         const response = await fetch('http://127.0.0.1:8000/api/map/coordinates', {
             method: 'POST',
             headers: {
@@ -59,40 +61,50 @@
                 address: address
             })
         });
+        //Data from the api
         const data = await response.json();
 
+        //Extract the lat and long from the data variable
         let lat = data.latitude;
         let lng = data.longitude;
-        let myLatLng = {lat: lat, lng: lng};
+        let myLatLng = {
+            lat: lat,
+            lng: lng
+        };
+
+        //Create the map with marker on the returned lat and lng
         let map = new google.maps.Map(document.getElementById('map'), {
             zoom: 8,
             center: myLatLng
         });
 
+        //Add the marker to the map
         let marker = new google.maps.Marker({
             position: myLatLng,
             map: map
         });
 
-        map.addListener('click', function (e) {
-            placeMarker(e.latLng, map);
+        //Add event listener on map which will call function placeMarker which will place marker on map
+        google.maps.event.addDomListener(map, 'click', function (event) {
+            placeMarker(event.latLng, map);
         });
 
         function placeMarker(position, map) {
-            var marker = new google.maps.Marker({
+            let marker = new google.maps.Marker({
                 position: position,
                 map: map
             });
             map.panTo(position);
-            console.log(position)
+            console.log("lat: " + position.toJSON().lat, "lng: " + position.toJSON().lng);
         }
     }
 
-
 </script>
-<body>
-Address: <input type="text" id="address" value="Seattle, WA"><br>
-<button onclick="initMap()">Show on Map</button>
-<div id="map" style="width:500px;height:380px;"></div>
+<body onload="initMap()">
+<div>
+    Address: <input type="text" id="address" value="Seattle, WA"><br>
+    <button>Show on Map</button>
+    <div id="map" style="width:500px;height:380px;"></div>
+</div>
 </body>
 </html>

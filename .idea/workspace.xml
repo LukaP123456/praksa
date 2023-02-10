@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3403da03-f0c8-4a73-9094-15bcc35c7730" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/node_test/server.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-project-directory/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/example-project-directory/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-project-directory/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/example-project-directory/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example-project-directory/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example-project-directory/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_maps_get_coordinates/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/google_maps_get_coordinates/resources/views/welcome.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,6 +196,10 @@
       <workItem from="1675777587318" duration="1388000" />
       <workItem from="1675779305020" duration="1432000" />
       <workItem from="1675848859331" duration="3409000" />
+      <workItem from="1675940693216" duration="569000" />
+      <workItem from="1675945099483" duration="7488000" />
+      <workItem from="1676022396832" duration="745000" />
+      <workItem from="1676023163650" duration="1345000" />
     </task>
     <servers />
   </component>
