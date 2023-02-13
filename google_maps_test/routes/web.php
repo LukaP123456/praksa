@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\GoogleController;
+use Database\Factories\UserFactory;
 use Illuminate\Support\Facades\Route;
 
 /*
