@@ -5,18 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3403da03-f0c8-4a73-9094-15bcc35c7730" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/node_test/1-intro.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_test/2-globals.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_test/3-module.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_test/4-names.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_test/5-utils.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_test/6-alt-flavor.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_test/7-mind-grenade.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_test/8-os-modules.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_test/content/subfolder/test.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_test/10-fs-sync.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_test/9-path-module.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_test/content/first.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_test/content/result-async.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_test/content/result-sync.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_test/content/second.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_test/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_test/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_test/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_test/app.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,25 +161,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "javascript.nodejs.core.library.configured.version": "14.18.1",
-    "javascript.nodejs.core.library.typings.version": "14.18.1",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "rearrange.code.on.save": "true",
-    "settings.editor.selected.configurable": "settings.nodejs",
-    "ts.external.directory.path": "/snap/phpstorm/314/plugins/javascript-impl/jsLanguageServicesImpl/external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;14.18.1&quot;,
+    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;14.18.1&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.nodejs&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/snap/phpstorm/314/plugins/javascript-impl/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="app.php" />
@@ -225,7 +222,8 @@
       <workItem from="1676023163650" duration="9269000" />
       <workItem from="1676035776441" duration="5471000" />
       <workItem from="1676275192748" duration="4130000" />
-      <workItem from="1676283855302" duration="6628000" />
+      <workItem from="1676283855302" duration="6766000" />
+      <workItem from="1676293914587" duration="1795000" />
     </task>
     <servers />
   </component>
