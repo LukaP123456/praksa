@@ -12,7 +12,15 @@
 | and give it the Closure to call when that URI is requested.
 |
 */
-
-$router->get('/', function () use ($router) {
-    return $router->app->version();
+$router->get('/info', function () use ($router) {
+    return phpinfo();
 });
+
+
+$router->group(['prefix' => 'api'], function () use ($router) {
+    $router->get('/posts', 'PostController@index');
+    $router->post('/posts', 'PostController@store');
+    $router->put('/posts/{id}', 'PostController@update');
+    $router->delete('/posts/{id}', 'PostController@destroy');
+});
+

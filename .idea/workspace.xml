@@ -6,7 +6,18 @@
   <component name="ChangeListManager">
     <list default="true" id="3403da03-f0c8-4a73-9094-15bcc35c7730" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/google_maps_get_coordinates/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/google_maps_get_coordinates/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/app/Http/Controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/app/Http/Controllers/PostController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/app/Models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/app/Models/Post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/bootstrap/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/bootstrap/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/blog/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/blog/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/database/factories/PostFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/database/factories/PostFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/database/factories/UserFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/database/migrations/2023_02_10_113428_create_posts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/database/migrations/2023_02_10_113428_create_posts_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/database/migrations/2023_02_10_145615_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/database/migrations/2023_02_10_145615_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/blog/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,7 +210,8 @@
       <workItem from="1675940693216" duration="569000" />
       <workItem from="1675945099483" duration="7488000" />
       <workItem from="1676022396832" duration="745000" />
-      <workItem from="1676023163650" duration="1345000" />
+      <workItem from="1676023163650" duration="9269000" />
+      <workItem from="1676035776441" duration="5471000" />
     </task>
     <servers />
   </component>
