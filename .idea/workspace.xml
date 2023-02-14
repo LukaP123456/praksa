@@ -5,15 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3403da03-f0c8-4a73-9094-15bcc35c7730" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/node_test/10-fs-sync.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_test/9-path-module.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_test/content/first.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_test/content/result-async.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_test/content/result-sync.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_test/content/second.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_test/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_test/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/google_maps_test2/config/googlemaps.php" beforeDir="false" afterPath="$PROJECT_DIR$/google_maps_test2/config/googlemaps.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,6 +216,7 @@
       <workItem from="1676275192748" duration="4130000" />
       <workItem from="1676283855302" duration="6766000" />
       <workItem from="1676293914587" duration="1795000" />
+      <workItem from="1676367558409" duration="51000" />
     </task>
     <servers />
   </component>

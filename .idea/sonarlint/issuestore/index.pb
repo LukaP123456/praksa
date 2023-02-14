@@ -25,9 +25,3 @@ L
 node_test/content/second.txt,4/4/44976fd4f71f1a5219be7d33dd784d2665b5c648
 Q
 !node_test/content/result-sync.txt,6/6/66eee10908d32dc92a5f35761fbc783ff2a56c13
-G
-node_test/10-fs-sync.js,9/c/9c11295755c8b558cc41ebaad4c56596f58541bf
-R
-"node_test/content/result-async.txt,0/8/08b2e9cd00e693ec39fded230d87a8e4685452eb
-@
-node_test/app.js,0/d/0d27954e5aefdb0ee8444d49bde01044ccff97eb
