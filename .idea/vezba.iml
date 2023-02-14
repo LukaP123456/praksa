@@ -119,6 +119,22 @@
       <excludeFolder url="file://$MODULE_DIR$/broadcast_message_postman/vendor/paragonie/sodium_compat" />
       <excludeFolder url="file://$MODULE_DIR$/broadcast_message_postman/vendor/pusher/pusher-php-server" />
       <excludeFolder url="file://$MODULE_DIR$/broadcast_message_postman/vendor/laravel/breeze" />
+      <excludeFolder url="file://$MODULE_DIR$/blog/vendor" />
+      <excludeFolder url="file://$MODULE_DIR$/google_maps_get_coordinates/storage/framework/cache/data/c0" />
+      <excludeFolder url="file://$MODULE_DIR$/google_maps_get_coordinates/storage/framework/cache/data/ec" />
+      <excludeFolder url="file://$MODULE_DIR$/google_maps_get_coordinates/vendor" />
+      <excludeFolder url="file://$MODULE_DIR$/google_maps_test/vendor" />
+      <excludeFolder url="file://$MODULE_DIR$/google_maps_test2/vendor" />
+      <excludeFolder url="file://$MODULE_DIR$/guzzle_test/storage/framework/cache/data/c0" />
+      <excludeFolder url="file://$MODULE_DIR$/guzzle_test/storage/framework/cache/data/ec" />
+      <excludeFolder url="file://$MODULE_DIR$/guzzle_test/vendor" />
+      <excludeFolder url="file://$MODULE_DIR$/localization_test/vendor" />
+      <excludeFolder url="file://$MODULE_DIR$/s3_storage_test/storage/framework/cache/data/c0" />
+      <excludeFolder url="file://$MODULE_DIR$/s3_storage_test/storage/framework/cache/data/ec" />
+      <excludeFolder url="file://$MODULE_DIR$/s3_storage_test/vendor" />
+      <excludeFolder url="file://$MODULE_DIR$/websocket_test/storage/framework/cache/data/c0" />
+      <excludeFolder url="file://$MODULE_DIR$/websocket_test/storage/framework/cache/data/ec" />
+      <excludeFolder url="file://$MODULE_DIR$/websocket_test/vendor" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
