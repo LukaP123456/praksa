@@ -5,8 +5,92 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3403da03-f0c8-4a73-9094-15bcc35c7730" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/.env.example" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/app/Console/Kernel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/app/Exceptions/Handler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/app/Http/Controllers/Controller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/app/Http/Kernel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/app/Http/Middleware/Authenticate.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/app/Http/Middleware/EncryptCookies.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/app/Http/Middleware/PreventRequestsDuringMaintenance.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/app/Http/Middleware/RedirectIfAuthenticated.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/app/Http/Middleware/TrimStrings.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/app/Http/Middleware/TrustHosts.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/app/Http/Middleware/TrustProxies.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/app/Http/Middleware/ValidateSignature.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/app/Http/Middleware/VerifyCsrfToken.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/app/Models/User.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/app/Providers/AuthServiceProvider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/app/Providers/BroadcastServiceProvider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/app/Providers/EventServiceProvider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/app/Providers/RouteServiceProvider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/artisan" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/bootstrap/app.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/bootstrap/cache/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/composer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/composer.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/config/app.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/config/auth.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/config/broadcasting.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/config/cache.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/config/cors.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/config/database.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/config/filesystems.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/config/hashing.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/config/logging.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/config/mail.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/config/queue.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/config/sanctum.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/config/services.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/config/session.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/config/view.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/database/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/database/factories/UserFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/database/migrations/2014_10_12_100000_create_password_resets_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/database/migrations/2019_08_19_000000_create_failed_jobs_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/database/migrations/2019_12_14_000001_create_personal_access_tokens_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/lang/en/auth.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/lang/en/pagination.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/lang/en/passwords.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/lang/en/validation.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/phpunit.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/public/.htaccess" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/public/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/public/robots.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/resources/css/app.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/resources/js/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/resources/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/resources/views/welcome.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/routes/api.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/routes/channels.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/routes/console.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/routes/web.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/storage/app/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/storage/app/public/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/storage/framework/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/storage/framework/cache/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/storage/framework/cache/data/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/storage/framework/sessions/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/storage/framework/testing/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/storage/framework/views/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/storage/logs/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/tests/CreatesApplication.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/tests/Feature/ExampleTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/tests/TestCase.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/tests/Unit/ExampleTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmine_test/vite.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_test/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_test/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_test/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_test/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,12 +262,23 @@
       <command value="app.php" />
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="npm.dev">
     <configuration name="app.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/node_test/app.js" working-dir="$PROJECT_DIR$/node_test">
+      <method v="2" />
+    </configuration>
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/node_test/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.dev" />
         <item itemvalue="Node.js.app.js" />
       </list>
     </recent_temporary>
@@ -217,7 +312,7 @@
       <workItem from="1676275192748" duration="4130000" />
       <workItem from="1676283855302" duration="6766000" />
       <workItem from="1676293914587" duration="1795000" />
-      <workItem from="1676367558409" duration="5672000" />
+      <workItem from="1676367558409" duration="7433000" />
     </task>
     <servers />
   </component>
