@@ -25,3 +25,44 @@ L
 node_test/content/second.txt,4/4/44976fd4f71f1a5219be7d33dd784d2665b5c648
 Q
 !node_test/content/result-sync.txt,6/6/66eee10908d32dc92a5f35761fbc783ff2a56c13
+R
+"node_test/content/result-async.txt,0/8/08b2e9cd00e693ec39fded230d87a8e4685452eb
+W
+'google_maps_test2/config/googlemaps.php,7/f/7fbd1d6e82e4f71bed784ac49cf64141221cea43
+m
+=google_maps_test/resources/views/googleAutocomplete.blade.php,6/8/68434432d641e20ed48a9611bf270cbf04563fea
+j
+:google_maps_test/app/Http/Controllers/GoogleController.php,2/0/20ecbd8d26ae887b919b4e032ddd8542f2ec40d5
+O
+google_maps_test/routes/web.php,3/9/3992978b6cf82257f7adfd75269fb3f9ea0b72b8
+O
+google_maps_test/routes/api.php,7/1/713b5d976bb4a890df62b613e0654838ceb7d4ca
+P
+ google_maps_test2/routes/api.php,5/5/559a3fed8fe3f76620151fd629d4e9e70124eb54
+P
+ google_maps_test2/routes/web.php,b/a/ba54dde8bec4bbff26c45d3a475337da54297ca9
+Z
+*google_maps_get_coordinates/routes/api.php,c/7/c76dcd77ab6eca60b7c734b8ea258d0fab084b30
+G
+node_test/10-fs-sync.js,9/c/9c11295755c8b558cc41ebaad4c56596f58541bf
+H
+node_test/11-fs-async.js,5/7/57d3f56b5a720700382be755217aa75023f455ec
+D
+node_test/12-http.js,2/8/28f5c1458b7f7d526077b56422245db5eab95ffc
+K
+node_test/package-lock.json,2/6/26f2a7edc2704574948c012b5f3bd263c8726f95
+:
+
+.gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
+F
+node_test/package.json,f/8/f85639a00918940c1f14f6dd6b4a8658044c997f
+^
+.node_test/1-event-loop-examples/1-red-files.js,a/7/a709ff0ef4705f2fd8a8748e734506f224935265
+`
+0node_test/1-event-loop-examples/3-setInterval.js,9/1/91d2a63c03c652bb51819dfce9fce9d5868444de
+[
++node_test/1-event-loop-examples/4-server.js,7/6/76a140531a71955825706468ff0951d3d6848961
+_
+/node_test/1-event-loop-examples/2-setTimeout.js,b/0/b00602f42643176b3baf5a0febf6ec8fe2a063fe
+@
+node_test/app.js,0/d/0d27954e5aefdb0ee8444d49bde01044ccff97eb
