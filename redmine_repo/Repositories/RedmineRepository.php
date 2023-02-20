@@ -11,7 +11,7 @@ use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 
 class RedmineRepository
 {
-    public function redmine_request($endpoint, $params = [], $method = "GET", $post_data = null)
+    public function request($endpoint, $params = [], $method = "GET", $post_data = null)
     {
         $redmine_url = config('redmineintegration.redmine_url');
         $redmine_api_key = config('redmineintegration.redmine_api_key');
@@ -47,7 +47,7 @@ class RedmineRepository
         } catch (ClientException $e) {
             $response = $e->getResponse();
             $responseBodyAsString = $response->getBody()->getContents();
-            \Log::error($e);
+            Log::error($e);
             throw new \Exception($responseBodyAsString);
         } catch (\Exception $e) {
             \Log::error($e);
@@ -58,7 +58,7 @@ class RedmineRepository
 
     public function get_projects($data = []) {
         try {
-            $response = $this->redmine_request('projects', $data);
+            $response = $this->request('projects', $data);
             return $response;
         } catch (\Exception $e) {
             \Log::error($e);
@@ -68,7 +68,7 @@ class RedmineRepository
 
     public function get_issues($data = []) {
         try {
-            $response = $this->redmine_request('issues', $data);
+            $response = $this->request('issues', $data);
             return $response;
         } catch (\Exception $e) {
             \Log::error($e);
@@ -78,7 +78,7 @@ class RedmineRepository
 
     public function get_agile_info($data = []) {
         try {
-            $response = $this->redmine_request('issues/'.$data['issue_id'].'/agile_data', $data);
+            $response = $this->request('issues/'.$data['issue_id'].'/agile_data', $data);
             return $response;
         } catch (\Exception $e) {
             \Log::error($e);
@@ -88,7 +88,7 @@ class RedmineRepository
 
     public function get_users($data = []) {
         try {
-            $response = $this->redmine_request('users', $data);
+            $response = $this->request('users', $data);
             return $response;
         } catch (\Exception $e) {
             \Log::error($e);
@@ -98,7 +98,7 @@ class RedmineRepository
 
     public function get_time_entries($data = []) {
         try {
-            $response = $this->redmine_request('time_entries', $data);
+            $response = $this->request('time_entries', $data);
             return $response;
         } catch (\Exception $e) {
             \Log::error($e);
@@ -108,7 +108,7 @@ class RedmineRepository
 
     public function get_related_issues($data = []) {
         try {
-            $response = $this->redmine_request('issues/'.$data['issue_id'].'/relations', $data);
+            $response = $this->request('issues/'.$data['issue_id'].'/relations', $data);
             return $response;
         } catch (\Exception $e) {
             \Log::error($e);
@@ -118,7 +118,7 @@ class RedmineRepository
 
     public function get_statuses($data = []) {
         try {
-            $response = $this->redmine_request('issue_statuses', $data);
+            $response = $this->request('issue_statuses', $data);
             return $response;
         } catch (\Exception $e) {
             \Log::error($e);
@@ -128,7 +128,7 @@ class RedmineRepository
 
     public function update_issue($issue_id, $post_data, $format = 'json') {
         try {
-            $response = $this->redmine_request('issues/'.$issue_id, ['format' => $format], "PUT", $post_data);
+            $response = $this->request('issues/'.$issue_id, ['format' => $format], "PUT", $post_data);
             return $response;
         } catch (\Exception $e) {
             \Log::error($e);

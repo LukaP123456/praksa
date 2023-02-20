@@ -11,7 +11,7 @@ use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 
 class ClockifyRepository
 {
-    public function clockify_request($endpoint, $params = [])
+    public function request($endpoint, $params = [])
     {
         $clockify_url = config('redmineintegration.clockify_url');
         $clockify_api_key = config('redmineintegration.clockify_api_key');

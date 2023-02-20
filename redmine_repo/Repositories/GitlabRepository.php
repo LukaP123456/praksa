@@ -11,7 +11,7 @@ use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 
 class GitlabRepository
 {
-    public function gitlab_request($gitlab_api_key, $endpoint, $params = [], $method = "GET", $post_data = null)
+    public function request($gitlab_api_key, $endpoint, $params = [], $method = "GET", $post_data = null)
     {
         $gitlab_url = config('redmineintegration.gitlab_url');
         $client = new Client();
