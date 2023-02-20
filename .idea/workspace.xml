@@ -5,10 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3403da03-f0c8-4a73-9094-15bcc35c7730" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/Repositories/BaseRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_repo/Repositories/BaseRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/Repositories/ClockifyRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_repo/Repositories/ClockifyRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/Repositories/GitlabRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_repo/Repositories/GitlabRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/redmine_repo/Repositories/RedmineRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_repo/Repositories/RedmineRepository.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -233,7 +229,7 @@
       <workItem from="1676367558409" duration="9103000" />
       <workItem from="1676877912855" duration="109000" />
       <workItem from="1676892712470" duration="397000" />
-      <workItem from="1676893116812" duration="1049000" />
+      <workItem from="1676893116812" duration="1350000" />
     </task>
     <servers />
   </component>
