@@ -53,6 +53,17 @@ class RedmineRepository
         return $response;
     }
 
+    public function get_projects($data = [])
+    {
+        try {
+            $response = $this->request('projects', $data);
+            return $response;
+        } catch (\Exception $e) {
+            \Log::error($e);
+            return [];
+        }
+    }
+
     public function get_issues($data = [])
     {
         try {
