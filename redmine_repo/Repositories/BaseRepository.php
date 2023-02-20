@@ -14,7 +14,7 @@ class BaseRepository
                 $redmine_repo = new RedmineRepository();
                 $redmine_repo->get_projects($data);
                 break;
-            case "clocify.url":
+            case "clockify.url":
                 $clockify_repo = new ClockifyRepository();
                 $clockify_repo->get_projects($workspace_id, $data);
                 break;
@@ -23,7 +23,7 @@ class BaseRepository
                 $gitlab_repo->get_projects($api_key, $data);
                 break;
             default:
-                $GLOBALS['unkown'] = false;
+                $GLOBALS['unknown_repo'] = true;
                 break;
         }
     }
@@ -35,7 +35,7 @@ class BaseRepository
                 $redmine_repo = new RedmineRepository();
                 $redmine_repo->get_users($data);
                 break;
-            case "clocify.url":
+            case "clockify.url":
                 $clockify_repo = new ClockifyRepository();
                 $clockify_repo->get_users($workspace_id, $data);
                 break;
@@ -43,7 +43,7 @@ class BaseRepository
                 return "No function get_users for gitlab";
                 break;
             default:
-                $GLOBALS['unkown'] = false;
+                $GLOBALS['unkown'] = true;
                 break;
         }
     }

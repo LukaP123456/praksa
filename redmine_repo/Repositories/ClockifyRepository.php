@@ -2,12 +2,9 @@
 
 namespace Modules\RedmineIntegration\Repositories;
 
-use Validator;
-use Carbon\Carbon;
 use GuzzleHttp\Client;
-use Illuminate\Http\Request;
 use GuzzleHttp\Exception\ClientException;
-use Illuminate\Contracts\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Facades\Log;
 
 class ClockifyRepository
 {
@@ -31,77 +28,83 @@ class ClockifyRepository
             }
 
             $query_params = implode('&', $query_params);
-            $res = $client->request("GET", $clockify_url.'/'.$endpoint. '?' . $query_params, $client_params);
+            $res = $client->request("GET", $clockify_url . '/' . $endpoint . '?' . $query_params, $client_params);
 
             $response = json_decode($res->getBody(), true);
         } catch (ClientException $e) {
             $response = $e->getResponse();
             $responseBodyAsString = $response->getBody()->getContents();
-            \Log::error($e);
+            Log::error($e);
             $response = [];
         } catch (\Exception $e) {
-            \Log::error($e);
+            Log::error($e);
             $response = [];
         }
         return $response;
     }
 
-    public function get_workspaces($data = []) {
+    public function get_workspaces($data = [])
+    {
         try {
             $response = $this->clockify_request('workspaces', $data);
             return $response;
         } catch (\Exception $e) {
-            \Log::error($e);
+            Log::error($e);
             return [];
         }
     }
 
-    public function get_users($workspace_id, $data = []) {
+    public function get_users($workspace_id, $data = [])
+    {
         try {
-            $response = $this->clockify_request('workspaces/'.$workspace_id.'/users', $data);
+            $response = $this->clockify_request('workspaces/' . $workspace_id . '/users', $data);
             return $response;
         } catch (\Exception $e) {
-            \Log::error($e);
+            Log::error($e);
             return [];
         }
     }
 
-    public function get_projects($workspace_id, $data = []) {
+    public function get_projects($workspace_id, $data = [])
+    {
         try {
-            $response = $this->clockify_request('workspaces/'.$workspace_id.'/projects', $data);
+            $response = $this->clockify_request('workspaces/' . $workspace_id . '/projects', $data);
             return $response;
         } catch (\Exception $e) {
-            \Log::error($e);
+            Log::error($e);
             return [];
         }
     }
 
-    public function get_tasks($workspace_id, $project_id, $data = []) {
+    public function get_tasks($workspace_id, $project_id, $data = [])
+    {
         try {
-            $response = $this->clockify_request('workspaces/'.$workspace_id.'/projects/'.$project_id.'/tasks', $data);
+            $response = $this->clockify_request('workspaces/' . $workspace_id . '/projects/' . $project_id . '/tasks', $data);
             return $response;
         } catch (\Exception $e) {
-            \Log::error($e);
+            Log::error($e);
             return [];
         }
     }
 
-    public function get_tags($workspace_id, $data = []) {
+    public function get_tags($workspace_id, $data = [])
+    {
         try {
-            $response = $this->clockify_request('workspaces/'.$workspace_id.'/tags', $data);
+            $response = $this->clockify_request('workspaces/' . $workspace_id . '/tags', $data);
             return $response;
         } catch (\Exception $e) {
-            \Log::error($e);
+            Log::error($e);
             return [];
         }
     }
 
-    public function get_time_entries($workspace_id, $user_id, $data = []) {
+    public function get_time_entries($workspace_id, $user_id, $data = [])
+    {
         try {
-            $response = $this->clockify_request('workspaces/'.$workspace_id.'/user/'.$user_id.'/time-entries', $data);
+            $response = $this->clockify_request('workspaces/' . $workspace_id . '/user/' . $user_id . '/time-entries', $data);
             return $response;
         } catch (\Exception $e) {
-            \Log::error($e);
+            Log::error($e);
             return [];
         }
     }

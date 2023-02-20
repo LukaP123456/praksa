@@ -2,12 +2,9 @@
 
 namespace Modules\RedmineIntegration\Repositories;
 
-use Validator;
-use Carbon\Carbon;
 use GuzzleHttp\Client;
-use Illuminate\Http\Request;
 use GuzzleHttp\Exception\ClientException;
-use Illuminate\Contracts\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Facades\Log;
 
 class GitlabRepository
 {
@@ -32,57 +29,61 @@ class GitlabRepository
             }
             $query_params[] = 'private_token=' . $gitlab_api_key;
             $query_params = implode('&', $query_params);
-            $res = $client->request($method, $gitlab_url.'/'.$endpoint. '?' . $query_params, $client_params);
+            $res = $client->request($method, $gitlab_url . '/' . $endpoint . '?' . $query_params, $client_params);
 
             $response = json_decode($res->getBody(), true);
         } catch (ClientException $e) {
             $response = $e->getResponse();
             $responseBodyAsString = $response->getBody()->getContents();
-            \Log::error($e);
+            Log::error($e);
             throw new \Exception($responseBodyAsString);
         } catch (\Exception $e) {
-            \Log::error($e);
+            Log::error($e);
             throw new \Exception($e);
         }
         return $response;
     }
 
-    public function get_projects($api_key, $data) {
+    public function get_projects($api_key, $data)
+    {
         try {
             $response = $this->gitlab_request($api_key, 'projects', $data);
             return $response;
         } catch (\Exception $e) {
-            \Log::error($e);
+            Log::error($e);
             return [];
         }
     }
 
-    public function get_branches($api_key, $project_id, $data) {
+    public function get_branches($api_key, $project_id, $data)
+    {
         try {
-            $response = $this->gitlab_request($api_key, 'projects/'. $project_id .'/repository/branches', $data);
+            $response = $this->gitlab_request($api_key, 'projects/' . $project_id . '/repository/branches', $data);
             return $response;
         } catch (\Exception $e) {
-            \Log::error($e);
+            Log::error($e);
             return [];
         }
     }
 
-    public function get_merge_requests($api_key, $data) {
+    public function get_merge_requests($api_key, $data)
+    {
         try {
             $response = $this->gitlab_request($api_key, 'merge_requests', $data);
             return $response;
         } catch (\Exception $e) {
-            \Log::error($e);
+            Log::error($e);
             return [];
         }
     }
 
-    public function create_merge_request($api_key, $project_id, $data) {
+    public function create_merge_request($api_key, $project_id, $data)
+    {
         try {
-            $response = $this->gitlab_request($api_key, 'projects/'. $project_id .'/merge_requests', [], 'POST', $data);
+            $response = $this->gitlab_request($api_key, 'projects/' . $project_id . '/merge_requests', [], 'POST', $data);
             return $response;
         } catch (\Exception $e) {
-            \Log::error($e);
+            Log::error($e);
             return [];
         }
     }
