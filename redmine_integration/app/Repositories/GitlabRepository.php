@@ -1,6 +1,6 @@
 <?php
 
-namespace redmine_integration\Repositories;
+namespace app\Repositories;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;

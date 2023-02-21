@@ -6,173 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="3403da03-f0c8-4a73-9094-15bcc35c7730" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/.env.example" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/.gitattributes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/Repositories/BaseRepository.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/Repositories/ClockifyRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/Repositories/ClockifyRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/Repositories/GitlabRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/Repositories/GitlabRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/Repositories/RedmineRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/Repositories/RedmineRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/app/Console/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/app/Console/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/app/Exceptions/Handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/app/Exceptions/Handler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/app/Http/Controllers/Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/app/Http/Middleware/Authenticate.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/app/Http/Middleware/Authenticate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/app/Http/Middleware/EncryptCookies.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/app/Http/Middleware/EncryptCookies.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/app/Http/Middleware/PreventRequestsDuringMaintenance.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/app/Http/Middleware/PreventRequestsDuringMaintenance.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/app/Http/Middleware/RedirectIfAuthenticated.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/app/Http/Middleware/RedirectIfAuthenticated.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/app/Http/Middleware/TrimStrings.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/app/Http/Middleware/TrimStrings.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/app/Http/Middleware/TrustHosts.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/app/Http/Middleware/TrustHosts.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/app/Http/Middleware/TrustProxies.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/app/Http/Middleware/TrustProxies.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/app/Http/Middleware/ValidateSignature.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/app/Http/Middleware/ValidateSignature.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/app/Http/Middleware/VerifyCsrfToken.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/app/Http/Middleware/VerifyCsrfToken.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/app/Providers/AuthServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/app/Providers/BroadcastServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/app/Providers/BroadcastServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/app/Providers/EventServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/app/Providers/EventServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/app/Providers/RouteServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/artisan" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/artisan" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/bootstrap/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/bootstrap/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/bootstrap/cache/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/bootstrap/cache/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/config/auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/config/broadcasting.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/config/broadcasting.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/config/cache.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/config/cache.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/config/cors.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/config/cors.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/config/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/config/filesystems.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/config/hashing.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/config/hashing.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/config/logging.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/config/logging.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/config/mail.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/config/mail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/config/queue.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/config/queue.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/config/sanctum.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/config/sanctum.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/config/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/config/services.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/config/session.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/config/session.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/config/view.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/config/view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/database/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/database/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/database/factories/UserFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/database/migrations/2014_10_12_100000_create_password_reset_tokens_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/database/migrations/2014_10_12_100000_create_password_reset_tokens_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/database/migrations/2019_08_19_000000_create_failed_jobs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/database/migrations/2019_08_19_000000_create_failed_jobs_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/database/migrations/2019_12_14_000001_create_personal_access_tokens_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/database/migrations/2019_12_14_000001_create_personal_access_tokens_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/database/seeders/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/phpunit.xml" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/phpunit.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/public/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/public/.htaccess" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/Repositories/BaseRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/public/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/public/robots.txt" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/public/robots.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/resources/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/resources/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/resources/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/resources/views/welcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/routes/channels.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/routes/channels.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/routes/console.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/routes/console.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/storage/app/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/storage/app/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/storage/app/public/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/storage/app/public/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/storage/framework/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/storage/framework/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/storage/framework/cache/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/storage/framework/cache/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/storage/framework/cache/data/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/storage/framework/cache/data/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/storage/framework/sessions/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/storage/framework/sessions/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/storage/framework/testing/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/storage/framework/testing/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/storage/framework/views/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/storage/framework/views/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/storage/logs/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/storage/logs/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/tests/CreatesApplication.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/tests/CreatesApplication.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/tests/Feature/ExampleTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/tests/Feature/ExampleTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/tests/TestCase.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/tests/TestCase.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/tests/Unit/ExampleTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/tests/Unit/ExampleTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_repo/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/vite.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/.env.example" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/app/Console/Kernel.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/app/Exceptions/Handler.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/app/Http/Controllers/Controller.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/app/Http/Kernel.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/app/Http/Middleware/Authenticate.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/app/Http/Middleware/EncryptCookies.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/app/Http/Middleware/PreventRequestsDuringMaintenance.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/app/Http/Middleware/RedirectIfAuthenticated.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/app/Http/Middleware/TrimStrings.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/app/Http/Middleware/TrustHosts.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/app/Http/Middleware/TrustProxies.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/app/Http/Middleware/ValidateSignature.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/app/Http/Middleware/VerifyCsrfToken.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/app/Models/User.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/app/Providers/AppServiceProvider.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/app/Providers/AuthServiceProvider.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/app/Providers/BroadcastServiceProvider.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/app/Providers/EventServiceProvider.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/app/Providers/RouteServiceProvider.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/artisan" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/bootstrap/app.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/bootstrap/cache/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/composer.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/composer.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/config/app.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/config/auth.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/config/broadcasting.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/config/cache.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/config/cors.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/config/database.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/config/filesystems.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/config/hashing.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/config/logging.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/config/mail.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/config/queue.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/config/sanctum.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/config/services.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/config/session.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/config/view.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/database/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/database/factories/UserFactory.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/database/migrations/2014_10_12_100000_create_password_resets_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/database/migrations/2019_08_19_000000_create_failed_jobs_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/database/migrations/2019_12_14_000001_create_personal_access_tokens_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/database/seeders/DatabaseSeeder.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/lang/en/auth.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/lang/en/pagination.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/lang/en/passwords.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/lang/en/validation.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/phpunit.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/public/.htaccess" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/public/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/public/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/public/robots.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/resources/css/app.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/resources/js/app.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/resources/js/bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/resources/views/welcome.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/routes/api.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/routes/channels.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/routes/console.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/routes/web.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/storage/app/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/storage/app/public/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/storage/framework/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/storage/framework/cache/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/storage/framework/cache/data/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/storage/framework/sessions/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/storage/framework/testing/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/storage/framework/views/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/storage/logs/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/tests/CreatesApplication.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/tests/Feature/ExampleTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/tests/TestCase.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/tests/Unit/ExampleTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmine_test/vite.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/redmine_integration/Repositories/BaseRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/app/Repositories/BaseRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/redmine_integration/Repositories/ClockifyRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/app/Repositories/ClockifyRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/redmine_integration/Repositories/GitlabRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/app/Repositories/GitlabRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/redmine_integration/Repositories/RedmineRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/app/Repositories/RedmineRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/redmine_integration/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmine_integration/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -402,6 +240,7 @@
       <workItem from="1676895184235" duration="297000" />
       <workItem from="1676895953094" duration="3054000" />
       <workItem from="1676900268196" duration="2008000" />
+      <workItem from="1676971417214" duration="1335000" />
     </task>
     <servers />
   </component>

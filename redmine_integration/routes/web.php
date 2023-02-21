@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use redmine_integration\Repositories\BaseRepository;
+use app\Repositories\BaseRepository;
 
 /*
 |--------------------------------------------------------------------------

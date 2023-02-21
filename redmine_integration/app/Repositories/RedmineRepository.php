@@ -1,6 +1,6 @@
 <?php
 
-namespace redmine_integration\Repositories;
+namespace app\Repositories;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
@@ -8,16 +8,41 @@ use Illuminate\Support\Facades\Log;
 
 class RedmineRepository
 {
+    public $endpoint;
+    public array $params;
+    public string $method;
+    public $post_data;
+    public array $data;
+    public int $issue_id;
+    public string $format;
+
+    /**
+     * @param $endpoint
+     * @param array $params
+     * @param string $method
+     * @param $post_data
+     */
+    public function __construct($endpoint, array $params, string $method, $post_data, array $data, int $issue_id, string $format = 'json')
+    {
+        $this->endpoint = $endpoint;
+        $this->params = $params;
+        $this->method = $method;
+        $this->post_data = $post_data;
+        $this->data = $data;
+        $this->issue_id = $issue_id;
+        $this->format = $format;
+    }
+
     public function redmine_request($endpoint, $params = [], $method = "GET", $post_data = null)
     {
         $redmine_url = config('redmineintegration.redmine_url');
         $redmine_api_key = config('redmineintegration.redmine_api_key');
 
         $format = config('redmineintegration.redmine_response_format');
-        if (isset($params['format'])) {
-            $format = $params['format'];
+        if (isset($this->params['format'])) {
+            $format = $this->params['format'];
         }
-        $endpoint .= '.' . $format;
+        $this->endpoint .= '.' . $format;
 
         $client = new Client();
         try {
@@ -26,19 +51,19 @@ class RedmineRepository
                 'timeout' => 30,
                 'connect_timeout' => 30
             ];
-            if ($post_data) {
-                $client_params['body'] = json_encode($post_data);
+            if ($this->post_data) {
+                $client_params['body'] = json_encode($this->post_data);
             }
             $query_params = [];
-            if ($params) {
-                foreach ($params as $key => $param) {
+            if ($this->params) {
+                foreach ($this->params as $key => $param) {
                     $query_params[] = $key . '=' . $param;
                 }
             }
 
             $query_params[] = 'key=' . $redmine_api_key;
             $query_params = implode('&', $query_params);
-            $res = $client->request($method, $redmine_url . '/' . $endpoint . '?' . $query_params, $client_params);
+            $res = $client->request($this->method, $redmine_url . '/' . $this->endpoint . '?' . $query_params, $client_params);
 
             $response = json_decode($res->getBody(), true);
         } catch (ClientException $e) {
@@ -53,10 +78,20 @@ class RedmineRepository
         return $response;
     }
 
-    public function get_projects($data = [])
+    public function get_projects()
     {
         try {
-            $response = $this->redmine_request('projects', $data);
+            return $this->redmine_request('projects', $this->data);
+        } catch (\Exception $e) {
+            Log::error($e);
+            return [];
+        }
+    }
+
+    public function get_issues()
+    {
+        try {
+            $response = $this->redmine_request('issues', $this->data);
             return $response;
         } catch (\Exception $e) {
             Log::error($e);
@@ -64,10 +99,10 @@ class RedmineRepository
         }
     }
 
-    public function get_issues($data = [])
+    public function get_agile_info()
     {
         try {
-            $response = $this->redmine_request('issues', $data);
+            $response = $this->redmine_request('issues/' . $this->data['issue_id'] . '/agile_data', $this->data);
             return $response;
         } catch (\Exception $e) {
             Log::error($e);
@@ -75,10 +110,10 @@ class RedmineRepository
         }
     }
 
-    public function get_agile_info($data = [])
+    public function get_users()
     {
         try {
-            $response = $this->redmine_request('issues/' . $data['issue_id'] . '/agile_data', $data);
+            $response = $this->redmine_request('users', $this->data);
             return $response;
         } catch (\Exception $e) {
             Log::error($e);
@@ -86,10 +121,10 @@ class RedmineRepository
         }
     }
 
-    public function get_users($data = [])
+    public function get_time_entries()
     {
         try {
-            $response = $this->redmine_request('users', $data);
+            $response = $this->redmine_request('time_entries', $this->data);
             return $response;
         } catch (\Exception $e) {
             Log::error($e);
@@ -97,10 +132,10 @@ class RedmineRepository
         }
     }
 
-    public function get_time_entries($data = [])
+    public function get_related_issues()
     {
         try {
-            $response = $this->redmine_request('time_entries', $data);
+            $response = $this->redmine_request('issues/' . $this->data['issue_id'] . '/relations', $this->data);
             return $response;
         } catch (\Exception $e) {
             Log::error($e);
@@ -108,10 +143,10 @@ class RedmineRepository
         }
     }
 
-    public function get_related_issues($data = [])
+    public function get_statuses()
     {
         try {
-            $response = $this->redmine_request('issues/' . $data['issue_id'] . '/relations', $data);
+            $response = $this->redmine_request('issue_statuses', $this->data);
             return $response;
         } catch (\Exception $e) {
             Log::error($e);
@@ -119,21 +154,10 @@ class RedmineRepository
         }
     }
 
-    public function get_statuses($data = [])
+    public function update_issue()
     {
         try {
-            $response = $this->redmine_request('issue_statuses', $data);
-            return $response;
-        } catch (\Exception $e) {
-            Log::error($e);
-            return [];
-        }
-    }
-
-    public function update_issue($issue_id, $post_data, $format = 'json')
-    {
-        try {
-            $response = $this->redmine_request('issues/' . $issue_id, ['format' => $format], "PUT", $post_data);
+            $response = $this->redmine_request('issues/' . $this->issue_id, ['format' => $this->format], "PUT", $this->post_data);
             return $response;
         } catch (\Exception $e) {
             Log::error($e);
