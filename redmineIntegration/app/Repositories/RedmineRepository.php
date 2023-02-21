@@ -20,9 +20,9 @@ class RedmineRepository
      * @param $endpoint
      * @param array $params
      * @param string $method
-     * @param $post_data
+     * @param array $post_data
      */
-    public function __construct($endpoint, array $params, string $method, $post_data, array $data, int $issue_id, string $format = 'json')
+    public function __construct($endpoint, array $params, string $method, array $post_data, array $data, int $issue_id, string $format = 'json')
     {
         $this->endpoint = $endpoint;
         $this->params = $params;
@@ -33,12 +33,12 @@ class RedmineRepository
         $this->format = $format;
     }
 
-    public function redmine_request($endpoint, $params = [], $method = "GET", $post_data = null)
+    public function redmine_request()
     {
-        $redmine_url = config('redmineintegration.redmine_url');
-        $redmine_api_key = config('redmineintegration.redmine_api_key');
+        $redmine_url = env('REDMINE_URL');
+        $redmine_api_key = env('REDMINE_API_KEY');
+        $format = env('REDMINE_FORMAT');
 
-        $format = config('redmineintegration.redmine_response_format');
         if (isset($this->params['format'])) {
             $format = $this->params['format'];
         }
@@ -78,10 +78,11 @@ class RedmineRepository
         return $response;
     }
 
+    //todo:get_projects,get_issues maybe aren't needed because redmine_request() takes in as a parameter issue,projects,users... so it gets the necessary data.
     public function get_projects()
     {
         try {
-            return $this->redmine_request('projects', $this->data);
+            return $this->redmine_request();
         } catch (\Exception $e) {
             Log::error($e);
             return [];
@@ -101,13 +102,16 @@ class RedmineRepository
     public function get_agile_info()
     {
         try {
-            return $this->redmine_request('issues/' . $this->data['issue_id'] . '/agile_data', $this->data);
+            //TODO:what is agile_data?
+//            return $this->redmine_request('issues/' . $this->data['issue_id'] . '/agile_data', $this->data);
+            return $this->redmine_request();
         } catch (\Exception $e) {
             Log::error($e);
             return [];
         }
     }
 
+    //todo:Need admin api key to get users
     public function get_users()
     {
         try {

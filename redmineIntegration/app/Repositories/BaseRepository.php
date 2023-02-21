@@ -23,8 +23,7 @@ class BaseRepository
                     $RepoData['method'],
                     $RepoData['post_data'],
                     $RepoData['data'],
-                    $RepoData['issue_id'],
-                    $RepoData['format']);
+                    $RepoData['issue_id']);
             case "gitlab.url":
                 return new GitlabRepository(
                     $RepoData['endpoint'],

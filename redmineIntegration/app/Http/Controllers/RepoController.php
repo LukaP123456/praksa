@@ -7,30 +7,52 @@ use Illuminate\Http\Request;
 
 class RepoController extends Controller
 {
-    public function test()
+    private function generateRepoData(string $endpoint, string $method = "GET", $post_data, $data, $issue_id, string $format = 'json')
+    {
+        return [
+            'integration' => 'redmine.url',
+            'endpoint' => $endpoint,
+            'params' => ['some params'],
+            'method' => $method,
+            'post_data' => $post_data,
+            'data' => $data,
+            'issue_id' => $issue_id,
+            'format' => $format,
+        ];
+    }
+
+    public function getProjects()
     {
         $baseRepo = new BaseRepository();
-        $repoData = [
-            'integration' => 'redmine.url',
-            'endpoint' => 'redmine.url',
-            'params' => ['some params'],
-            'method' => 'GET',
-            'post_data' => [1, 2, 3, 4],
-            'data' => ['data' => [1, 2, 3, 4]],
-            'issue_id' => 1,
-            'format' => 'json',
-        ];
+        $repoData = $this->generateRepoData('projects', 'GET', [1], ['data' => [1]], 1);
+        return $baseRepo->CallRepo($repoData)->get_projects();
+    }
 
-//        $repoData = [
-//            'integration' => 'clockify.url',
-//            'endpoint' => 'clockify.url',
-//            'params' => ['some params'],
-//            'method' => 'GET',
-//            'post_data' => [1, 2, 3, 4],
-//            'data' => ['data' => [1, 2, 3, 4]],
-//            'issue_id' => 1,
-//            'format' => 'json',
-//        ];
-        dd($baseRepo->CallRepo($repoData)->get_projects());
+    public function getIssues()
+    {
+        $baseRepo = new BaseRepository();
+        $repoData = $this->generateRepoData('issues', 'GET', [1], ['data' => [1]], 222);
+        return $baseRepo->CallRepo($repoData)->get_issues();
+    }
+
+    public function getAgileInfo()
+    {
+        $baseRepo = new BaseRepository();
+        $repoData = $this->generateRepoData('issues', 'GET', [1], ['issue_id' => [39016]], 222);
+        return $baseRepo->CallRepo($repoData)->get_issues();
+    }
+
+    public function getUsers()
+    {
+        $baseRepo = new BaseRepository();
+        $repoData = $this->generateRepoData('users', 'GET', [1], ['issue_id' => [39016]], 222);
+        return $baseRepo->CallRepo($repoData)->get_users();
+    }
+
+    public function getTimeEntries()
+    {
+        $baseRepo = new BaseRepository();
+        $repoData = $this->generateRepoData('time_entries', 'GET', [1], ['issue_id' => [39016]], 222);
+        return $baseRepo->CallRepo($repoData)->get_users();
     }
 }

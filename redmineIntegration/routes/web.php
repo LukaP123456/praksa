@@ -14,5 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [RepoController::class, 'test']);
+Route::get('/BaseProjects', [RepoController::class, 'getProjects']);
+Route::get('/BaseIssues', [RepoController::class, 'getIssues']);
+
 
