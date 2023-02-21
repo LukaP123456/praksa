@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use app\Repositories\BaseRepository;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,12 +13,9 @@ use app\Repositories\BaseRepository;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::get('/', [\App\Http\Controllers\TestController::class, 'test']);
 
 Route::get('/test', function () {
-    $base_repo = new BaseRepository();
+    $base_repo = new \App\Repositories\BaseRepository();
     return $base_repo->CallRepo('redmine.url');
 });
