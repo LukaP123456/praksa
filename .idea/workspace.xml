@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3403da03-f0c8-4a73-9094-15bcc35c7730" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/redmineIntegration/app/Http/Controllers/RepoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmineIntegration/app/Http/Controllers/RepoController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmineIntegration/app/Repositories/RedmineRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmineIntegration/app/Repositories/RedmineRepository.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -237,7 +235,7 @@
       <workItem from="1676895184235" duration="297000" />
       <workItem from="1676895953094" duration="3054000" />
       <workItem from="1676900268196" duration="2008000" />
-      <workItem from="1676971417214" duration="16059000" />
+      <workItem from="1676971417214" duration="16728000" />
     </task>
     <servers />
   </component>

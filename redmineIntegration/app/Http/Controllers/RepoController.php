@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Log;
 
 class RepoController extends Controller
 {
-    private function generateRepoData($integration, $endpoint, $method = "GET", $params = [], $post_data = [], $data = [], $issue_id = 0, $format = 'json')
+    private function generateRepoData($integration, $endpoint, $method = "GET", $params = [], $post_data = [], $data = [], $issue_id = 0, $format = 'json'): array
     {
         return [
             'integration' => $integration,
