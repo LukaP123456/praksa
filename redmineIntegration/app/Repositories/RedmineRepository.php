@@ -33,6 +33,7 @@ class RedmineRepository
         $this->format = $format;
     }
 
+    //todo:U teoriji mozemo samo pozivati redmine_request/gitlab_request bez da koristimo get_projects ili get_users jer unutar redmine_request/gitlab_request mi vec odredjujemo koji endpoint cemo zvati
     public function redmine_request()
     {
         $redmine_url = env('REDMINE_URL');
@@ -74,6 +75,7 @@ class RedmineRepository
         } catch (\Exception $e) {
             Log::error($e);
             throw new \Exception($e);
+            //todo:Tu treba da bude 2 catcha?
         }
         return $response;
     }
