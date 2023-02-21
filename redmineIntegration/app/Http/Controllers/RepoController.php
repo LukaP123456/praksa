@@ -37,17 +37,13 @@ class RepoController extends Controller
     public function getIssues()
     {
         $baseRepo = new BaseRepository();
-        $repoData = [
-            'integration' => 'redmine.url',
-            'endpoint' => 'issues',
-            'params' => ['some params'],
-            'method' => 'GET',
-            'post_data' => [1],
-            'data' => ['data' => [1]],
-            'issue_id' => 222,
-            'format' => 'json',
-        ];
-        return $baseRepo->CallRepo($repoData)->get_issues();
+        $repoData = $this->generateRepoData('redmine.url', 'issues');
+        try {
+            return $baseRepo->CallRepo($repoData)->request();
+        } catch (\Exception $e) {
+            Log::error($e);
+            throw new \Exception($e);
+        }
     }
 
     public function getAgileInfo()

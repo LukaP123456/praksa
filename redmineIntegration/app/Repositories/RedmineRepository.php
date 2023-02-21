@@ -94,7 +94,7 @@ class RedmineRepository
     public function get_issues()
     {
         try {
-            return $this->redmine_request('issues', $this->data);
+            return $this->request('issues', $this->data);
         } catch (\Exception $e) {
             Log::error($e);
             return [];
