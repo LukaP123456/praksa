@@ -27,7 +27,7 @@ class RepoController extends Controller
         $baseRepo = new BaseRepository();
         $repoData = $this->generateRepoData('redmine.url', 'projects');
         try {
-            return $baseRepo->CallRepo($repoData)->redmine_request();
+            return $baseRepo->CallRepo($repoData)->request();
         } catch (\Exception $e) {
             Log::error($e);
             throw new \Exception($e);
