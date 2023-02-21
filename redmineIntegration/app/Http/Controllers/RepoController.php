@@ -20,6 +20,17 @@ class RepoController extends Controller
             'issue_id' => 1,
             'format' => 'json',
         ];
-        dd($baseRepo->CallRepo($repoData));
+
+//        $repoData = [
+//            'integration' => 'clockify.url',
+//            'endpoint' => 'clockify.url',
+//            'params' => ['some params'],
+//            'method' => 'GET',
+//            'post_data' => [1, 2, 3, 4],
+//            'data' => ['data' => [1, 2, 3, 4]],
+//            'issue_id' => 1,
+//            'format' => 'json',
+//        ];
+        dd($baseRepo->CallRepo($repoData)->get_projects());
     }
 }
