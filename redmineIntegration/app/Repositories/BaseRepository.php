@@ -9,13 +9,14 @@ class BaseRepository
         switch ($RepoData['integration']) {
             case "redmine.url":
                 return new RedmineRepository(
+                    $RepoData['integration'],
                     $RepoData['endpoint'],
-                    $RepoData['params'],
+                    $RepoData['format'],
                     $RepoData['method'],
+                    $RepoData['params'],
                     $RepoData['post_data'],
                     $RepoData['data'],
-                    $RepoData['issue_id'],
-                    $RepoData['format']);
+                    $RepoData['issue_id']);
             case "clockify.url":
                 return new ClockifyRepository(
                     $RepoData['endpoint'],

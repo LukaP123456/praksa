@@ -9,13 +9,14 @@ use Illuminate\Support\Facades\Log;
 
 class RedmineRepository
 {
-    public string $endpoint;
-    public array $params;
-    public string $method;
-    public array $post_data;
-    public array $data;
-    public int $issue_id;
-    public string $format;
+    private $integration;
+    public $endpoint;
+    public $params;
+    public $method;
+    public $post_data;
+    public $data;
+    public $issue_id;
+    public $format;
 
     /**
      * @param $endpoint
@@ -23,15 +24,16 @@ class RedmineRepository
      * @param string $method
      * @param array $post_data
      */
-    public function __construct($endpoint, array $params, string $method, array $post_data, array $data, int $issue_id, string $format = 'json')
+    public function __construct($integration = 'redmine.url', $endpoint, $format = 'json', $method, $params = [], $post_data, $data, $issue_id)
     {
+        $this->integration = $integration;
         $this->endpoint = $endpoint;
+        $this->format = $format;
         $this->params = $params;
         $this->method = $method;
         $this->post_data = $post_data;
         $this->data = $data;
         $this->issue_id = $issue_id;
-        $this->format = $format;
     }
 
     //todo:U teoriji mozemo samo pozivati redmine_request/gitlab_request bez da koristimo get_projects ili get_users jer unutar redmine_request/gitlab_request mi vec odredjujemo koji endpoint cemo zvati
@@ -73,10 +75,7 @@ class RedmineRepository
             $responseBodyAsString = $response->getBody()->getContents();
             Log::error($e);
             throw new \Exception($responseBodyAsString);
-        } catch (\Exception $e) {
-            Log::error($e);
-            throw new \Exception($e);
-        } catch (GuzzleException $e) {
+        } catch (\Exception|GuzzleException $e) {
             Log::error($e);
             throw new \Exception($e);
         }

@@ -8,27 +8,27 @@ use Illuminate\Support\Facades\Log;
 
 class RepoController extends Controller
 {
-    private function generateRepoData($integration, $endpoint, $method = "GET", $params = [], $post_data = [], $data = [], $issue_id = 0, $format = 'json'): array
+    private function generateRepoData($integration, $endpoint, $format = 'json', $method = "GET", $params = [], $post_data = [], $data = [], $issue_id = 0): array
     {
         return [
             'integration' => $integration,
             'endpoint' => $endpoint,
+            'format' => $format,
             'method' => $method,
             'params' => $params,
             'post_data' => $post_data,
             'data' => $data,
             'issue_id' => $issue_id,
-            'format' => $format,
         ];
     }
 
     /**
      * @throws \Exception
      */
-    private function callRepo($integration, $type)
+    private function callRepo($integration, $endpoint, $format = 'json', $method = "GET", $params = [], $post_data = [], $data = [], $issue_id = 0)
     {
         $baseRepo = new BaseRepository();
-        $repoData = $this->generateRepoData($integration, $type);
+        $repoData = $this->generateRepoData($integration, $endpoint, $format);
         try {
             return $baseRepo->CallRepo($repoData)->request();
         } catch (\Exception $e) {
@@ -42,7 +42,7 @@ class RepoController extends Controller
      */
     public function get_projects()
     {
-        return $this->callRepo('redmine.url', 'projects');
+        return $this->callRepo('redmine.url', 'projects', 'json');
     }
 
     /**
