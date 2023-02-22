@@ -26,7 +26,7 @@ class RedmineRepository
      * @param string $method
      * @param array $post_data
      */
-    public function __construct($integration = 'redmine.url', $endpoint, $format = 'json', $method = "GET", $params = [], $post_data, $data, $issue_id)
+    public function __construct($integration = 'redmine.url', $endpoint = '', $format = 'json', $method = "GET", $params = [], $post_data = [], $data = [], $issue_id = 0)
     {
         $this->integration = $integration;
         $this->endpoint = $endpoint;
@@ -38,26 +38,33 @@ class RedmineRepository
         $this->issue_id = $issue_id;
     }
 
+    //todo:U teoriji mozemo samo pozivati redmine_request/gitlab_request bez da koristimo get_projects ili get_users jer unutar redmine_request/gitlab_request mi vec odredjujemo koji endpoint cemo zvati
     public function request()
     {
-        $redmine_url = env('REDMINE_URL');
-        $redmine_api_key = env('REDMINE_API_KEY');
-        $format = $this->format;
-
-        if (isset($this->params['format'])) {
-            $format = $this->params['format'];
-        }
-
         try {
+            $redmine_url = env('REDMINE_URL');
+            $redmine_api_key = env('REDMINE_API_KEY');
+            $format = $this->format;
+
+            if (isset($this->params['format'])) {
+                $format = $this->params['format'];
+            }
+
             $client_params = [
-                'headers' => ['Content-Type' => 'application/json'],
+                'Content-Type' => 'application/json',
                 'timeout' => 30,
                 'connect_timeout' => 30,
                 'X-Redmine-API-Key' => $redmine_api_key
             ];
+
+            $client = new Client([
+                'headers' => $client_params, //This is put in the headers
+            ]);
+
             if ($this->post_data) {
                 $client_params['body'] = json_encode($this->post_data);
             }
+
             $query_params = [];
             if ($this->params) {
                 foreach ($this->params as $key => $param) {
@@ -65,29 +72,29 @@ class RedmineRepository
                 }
             }
 
-            //todo:Need info 4 query_params, what they do?
-            $query_params[] = 'key=' . $redmine_api_key;
             $query_params = implode('&', $query_params);
 
-            $url = $redmine_url . '/' . $this->endpoint . '.' . $format;
-            $res = Http::withHeaders($client_params)
-                ->{$this->method}($url);
+            if (empty($this->params)) {
+                $res = $client->request($this->method, $redmine_url . '/' . $this->endpoint . '.' . $format, $client_params);
+            } else {
+                $res = $client->request($this->method, $redmine_url . '/' . $this->endpoint . '.' . $format . '?' . $query_params, $client_params);
+            }
 
-            $response = ($format != 'json') ? $res : $res->json();
+            $response = ($format != 'json') ? $res->getBody() : json_decode($res->getBody(), true);
 
-        } catch (RequestException $e) {
-            $response = $e->response->json();
-            $responseBodyAsString = json_encode($response);
+        } catch (ClientException $e) {
+            $response = $e->getResponse();
+            $responseBodyAsString = $response->getBody()->getContents();
             Log::error($e);
             throw new \Exception($responseBodyAsString);
-        } catch (\Exception $e) {
+        } catch (\Exception|GuzzleException $e) {
             Log::error($e);
             throw new \Exception($e);
         }
         return $response;
     }
-
-    //todo:U teoriji mozemo samo pozivati redmine_request/gitlab_request bez da koristimo get_projects ili get_users jer unutar redmine_request/gitlab_request mi vec odredjujemo koji endpoint cemo zvati
+    
+//HTTP request()
 //    public function request()
 //    {
 //        $redmine_url = env('REDMINE_URL');
@@ -98,47 +105,44 @@ class RedmineRepository
 //            $format = $this->params['format'];
 //        }
 //
-//        $client = new Client();
-//        $client_params = [
-//            'headers' => ['Content-Type' => 'application/json'],
-//            'timeout' => 30,
-//            'connect_timeout' => 30,
-//            'X-Redmine-API-Key' => $redmine_api_key
-//        ];
-//
-//        if ($this->post_data) {
-//            $client_params['body'] = json_encode($this->post_data);
-//        }
-//        $query_params = [];
-//        if ($this->params) {
-//            foreach ($this->params as $key => $param) {
-//                $query_params[] = $key . '=' . $param;
-//            }
-//        }
-//
-//        $query_params = implode('&', $query_params);
-//
-//        if (empty($this->params)) {
-//            $res = $client->request($this->method, $redmine_url . '/' . $this->endpoint . '.' . $format, $client_params);
-//        } else {
-//            $res = $client->request($this->method, $redmine_url . '/' . $this->endpoint . '.' . $format . '?' . $query_params, $client_params);
-//        }
-//
-//        $response = json_decode($res->getBody(), true);
 //        try {
+//            $client_params = [
+//                'headers' => ['Content-Type' => 'application/json'],
+//                'timeout' => 30,
+//                'connect_timeout' => 30,
+//                'X-Redmine-API-Key' => $redmine_api_key
+//            ];
+//            if ($this->post_data) {
+//                $client_params['body'] = json_encode($this->post_data);
+//            }
+//            $query_params = [];
+//            if ($this->params) {
+//                foreach ($this->params as $key => $param) {
+//                    $query_params[] = $key . '=' . $param;
+//                }
+//            }
 //
+//            //todo:Need info 4 query_params, what they do?
+//            $query_params[] = 'key=' . $redmine_api_key;
+//            $query_params = implode('&', $query_params);
 //
-//        } catch (ClientException $e) {
-//            $response = $e->getResponse();
-//            $responseBodyAsString = $response->getBody()->getContents();
+//            $url = $redmine_url . '/' . $this->endpoint . '.' . $format;
+//            $res = Http::withHeaders($client_params)->{$this->method}($url);
+//
+//            $response = ($format != 'json') ? $res : $res->json();
+//
+//        } catch (RequestException $e) {
+//            $response = $e->response->json();
+//            $responseBodyAsString = json_encode($response);
 //            Log::error($e);
 //            throw new \Exception($responseBodyAsString);
-//        } catch (\Exception|GuzzleException $e) {
+//        } catch (\Exception $e) {
 //            Log::error($e);
 //            throw new \Exception($e);
 //        }
 //        return $response;
 //    }
+
 
 //
 //    public function get_projects()
