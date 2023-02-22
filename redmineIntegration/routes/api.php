@@ -15,11 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/BaseProjects', [RepoController::class, 'getProjects']);
-Route::get('/BaseIssues', [RepoController::class, 'getIssues']);
-Route::get('/BaseAgileInfo', [RepoController::class, 'getAgileInfo']);
-Route::get('/BaseGetUsers', [RepoController::class, 'getUsers']);
-Route::get('/BaseGetTimeEntries', [RepoController::class, 'getUsers']);
+Route::get('/BaseProjects', [RepoController::class, 'get_projects']);
+Route::get('/BaseIssues', [RepoController::class, 'get_issues']);
+Route::get('/BaseAgileInfo', [RepoController::class, 'get_agile_info']);
+Route::get('/BaseGetUsers', [RepoController::class, 'get_users']);
+Route::get('/BaseGetTimeEntries', [RepoController::class, 'get_time_entries']);
 
 
 

@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
+use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Support\Facades\Log;
 
 class ClockifyRepository
@@ -34,7 +35,7 @@ class ClockifyRepository
     }
 
 
-    public function clockify_request()
+    public function request()
     {
         $clockify_url = config('redmineintegration.clockify_url');
         $clockify_api_key = config('redmineintegration.clockify_api_key');
@@ -62,7 +63,7 @@ class ClockifyRepository
             $responseBodyAsString = $response->getBody()->getContents();
             Log::error($e);
             $response = [];
-        } catch (\Exception $e) {
+        } catch (\Exception|GuzzleException $e) {
             Log::error($e);
             $response = [];
         }

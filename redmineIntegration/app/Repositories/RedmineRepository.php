@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
+use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Support\Facades\Log;
 
 class RedmineRepository
@@ -38,19 +39,19 @@ class RedmineRepository
     {
         $redmine_url = env('REDMINE_URL');
         $redmine_api_key = env('REDMINE_API_KEY');
-        $format = env('REDMINE_FORMAT');
+        $format = $this->format;
 
         if (isset($this->params['format'])) {
             $format = $this->params['format'];
         }
-        $this->endpoint .= '.' . $format;
 
         $client = new Client();
         try {
             $client_params = [
                 'headers' => ['Content-Type' => 'application/json'],
                 'timeout' => 30,
-                'connect_timeout' => 30
+                'connect_timeout' => 30,
+                'X-Redmine-API-Key' => $redmine_api_key
             ];
             if ($this->post_data) {
                 $client_params['body'] = json_encode($this->post_data);
@@ -64,9 +65,9 @@ class RedmineRepository
 
             $query_params[] = 'key=' . $redmine_api_key;
             $query_params = implode('&', $query_params);
-            $res = $client->request($this->method, $redmine_url . '/' . $this->endpoint . '?' . $query_params, $client_params);
-
+            $res = $client->request($this->method, $redmine_url . '/' . $this->endpoint . '.' . $format . '?' . $query_params, $client_params);
             $response = json_decode($res->getBody(), true);
+
         } catch (ClientException $e) {
             $response = $e->getResponse();
             $responseBodyAsString = $response->getBody()->getContents();
@@ -76,6 +77,9 @@ class RedmineRepository
             Log::error($e);
             throw new \Exception($e);
             //todo:Tu treba da bude 2 catcha?
+        } catch (GuzzleException $e) {
+            Log::error($e);
+            throw new \Exception($e);
         }
         return $response;
     }
