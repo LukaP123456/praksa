@@ -28,7 +28,7 @@ class RepoController extends Controller
     private function callRepo($integration, $endpoint, $format = 'json', $method = "GET", $params = [], $post_data = [], $data = [], $issue_id = 0)
     {
         $baseRepo = new BaseRepository();
-        $repoData = $this->generateRepoData($integration, $endpoint, $format);
+        $repoData = $this->generateRepoData($integration, $endpoint, $format, $method, $params, $post_data, $data, $issue_id);
         try {
             return $baseRepo->CallRepo($repoData)->request();
         } catch (\Exception $e) {
@@ -42,7 +42,15 @@ class RepoController extends Controller
      */
     public function get_projects()
     {
-        return $this->callRepo('redmine.url', 'projects', 'json');
+        return $this->callRepo('redmine.url', 'projects');
+    }
+
+    /**
+     * @throws \Exception
+     */
+    public function get_trackers()
+    {
+        return $this->callRepo('redmine.url', 'trackers');
     }
 
     /**

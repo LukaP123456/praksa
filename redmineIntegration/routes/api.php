@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/BaseProjects', [RepoController::class, 'get_projects']);
+Route::get('/BaseTrackers', [RepoController::class, 'get_trackers']);
 Route::get('/BaseIssues', [RepoController::class, 'get_issues']);
 Route::get('/BaseAgileInfo', [RepoController::class, 'get_agile_info']);
 Route::get('/BaseGetUsers', [RepoController::class, 'get_users']);
