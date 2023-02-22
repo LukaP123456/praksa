@@ -99,27 +99,34 @@ class RedmineRepository
 //        }
 //
 //        $client = new Client();
-//        try {
-//            $client_params = [
-//                'headers' => ['Content-Type' => 'application/json'],
-//                'timeout' => 30,
-//                'connect_timeout' => 30,
-//                'X-Redmine-API-Key' => $redmine_api_key
-//            ];
-//            if ($this->post_data) {
-//                $client_params['body'] = json_encode($this->post_data);
-//            }
-//            $query_params = [];
-//            if ($this->params) {
-//                foreach ($this->params as $key => $param) {
-//                    $query_params[] = $key . '=' . $param;
-//                }
-//            }
+//        $client_params = [
+//            'headers' => ['Content-Type' => 'application/json'],
+//            'timeout' => 30,
+//            'connect_timeout' => 30,
+//            'X-Redmine-API-Key' => $redmine_api_key
+//        ];
 //
-//            $query_params[] = 'key=' . $redmine_api_key;
-//            $query_params = implode('&', $query_params);
+//        if ($this->post_data) {
+//            $client_params['body'] = json_encode($this->post_data);
+//        }
+//        $query_params = [];
+//        if ($this->params) {
+//            foreach ($this->params as $key => $param) {
+//                $query_params[] = $key . '=' . $param;
+//            }
+//        }
+//
+//        $query_params = implode('&', $query_params);
+//
+//        if (empty($this->params)) {
+//            $res = $client->request($this->method, $redmine_url . '/' . $this->endpoint . '.' . $format, $client_params);
+//        } else {
 //            $res = $client->request($this->method, $redmine_url . '/' . $this->endpoint . '.' . $format . '?' . $query_params, $client_params);
-//            $response = json_decode($res->getBody(), true);
+//        }
+//
+//        $response = json_decode($res->getBody(), true);
+//        try {
+//
 //
 //        } catch (ClientException $e) {
 //            $response = $e->getResponse();
