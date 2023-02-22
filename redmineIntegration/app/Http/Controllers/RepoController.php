@@ -25,8 +25,10 @@ class RepoController extends Controller
     /**
      * @throws \Exception
      */
-    private function CallRepo($baseRepo, $repoData)
+    private function callRepo($integration, $type)
     {
+        $baseRepo = new BaseRepository();
+        $repoData = $this->generateRepoData($integration, $type);
         try {
             return $baseRepo->CallRepo($repoData)->request();
         } catch (\Exception $e) {
@@ -35,59 +37,49 @@ class RepoController extends Controller
         }
     }
 
+    /**
+     * @throws \Exception
+     */
     public function get_projects()
     {
-        $baseRepo = new BaseRepository();
-        $repoData = $this->generateRepoData('redmine.url', 'projects');
-        $this->CallRepo($baseRepo, $repoData);
+        return $this->callRepo('redmine.url', 'projects');
     }
 
+    /**
+     * @throws \Exception
+     */
     public function get_issues()
     {
-        $baseRepo = new BaseRepository();
-        $repoData = $this->generateRepoData('redmine.url', 'issues');
-        $this->CallRepo($baseRepo, $repoData);
+        return $this->callRepo('redmine.url', 'issues');
     }
 
     public function get_agile_info()
     {
-        $baseRepo = new BaseRepository();
-        $repoData = $this->generateRepoData('redmine.url', 'get_agile_info');
-        $this->CallRepo($baseRepo, $repoData);
+        return $this->callRepo('redmine.url', 'agile_data');
     }
 
     public function get_users()
     {
-        $baseRepo = new BaseRepository();
-        $repoData = $this->generateRepoData('redmine.url', 'users');
-        $this->CallRepo($baseRepo, $repoData);
+        return $this->callRepo('redmine.url', 'users');
     }
 
     public function get_time_entries()
     {
-        $baseRepo = new BaseRepository();
-        $repoData = $this->generateRepoData('redmine.url', 'time_entries');
-        $this->CallRepo($baseRepo, $repoData);
+        return $this->callRepo('redmine.url', 'time_entries');
     }
 
     public function get_related_issues()
     {
-        $baseRepo = new BaseRepository();
-        $repoData = $this->generateRepoData('redmine.url', 'time_entries');
-        $this->CallRepo($baseRepo, $repoData);
+        return $this->callRepo('redmine.url', 'issues');//('issues/'.$data['issue_id'].'/relations', $data);
     }
 
     public function get_statuses()
     {
-        $baseRepo = new BaseRepository();
-        $repoData = $this->generateRepoData('redmine.url', 'issue_statuses');
-        $this->CallRepo($baseRepo, $repoData);
+        return $this->callRepo('redmine.url', 'issue_statuses');
     }
 
     public function update_issue()
     {
-        $baseRepo = new BaseRepository();
-        $repoData = $this->generateRepoData('redmine.url', 'issue_statuses');
-        $this->CallRepo($baseRepo, $repoData);
+        return $this->callRepo('redmine.url', 'issues');//('issues/'.$issue_id, ['format' => $format], "PUT", $post_data);
     }
 }

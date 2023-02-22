@@ -76,7 +76,6 @@ class RedmineRepository
         } catch (\Exception $e) {
             Log::error($e);
             throw new \Exception($e);
-            //todo:Tu treba da bude 2 catcha?
         } catch (GuzzleException $e) {
             Log::error($e);
             throw new \Exception($e);
@@ -84,7 +83,6 @@ class RedmineRepository
         return $response;
     }
 
-    //todo:get_projects,get_issues maybe aren't needed because redmine_request() takes in as a parameter issue,projects,users... so it gets the necessary data.
     public function get_projects()
     {
         try {
