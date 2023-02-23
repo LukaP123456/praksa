@@ -58,7 +58,7 @@ class RedmineRepository
             ];
 
             $client = new Client([
-                'headers' => $client_params, //This is put in the headers
+                'headers' => $client_params, //This is how you put data into header
             ]);
 
             if ($this->post_data) {
@@ -73,12 +73,18 @@ class RedmineRepository
             }
 
             $query_params = implode('&', $query_params);
+            $method = $this->method;
+            $url = "";
 
-            if (empty($this->params)) {
-                $res = $client->request($this->method, $redmine_url . '/' . $this->endpoint . '.' . $format, $client_params);
-            } else {
-                $res = $client->request($this->method, $redmine_url . '/' . $this->endpoint . '.' . $format . '?' . $query_params, $client_params);
-            }
+            $query_params = empty($this->params) ? '' : http_build_query($this->params);
+            $url = $redmine_url . '/' . $this->endpoint . '.' . $format . ($query_params ? '?' . $query_params : '');
+//            if (empty($this->params)) {
+//                $url = $redmine_url . '/' . $this->endpoint . '.' . $format;
+//            } else {
+//                $url = $redmine_url . '/' . $this->endpoint . '.' . $format . '?' . $query_params;
+////                $res = $client->request($this->method, $redmine_url . '/' . $this->endpoint . '.' . $format . '?' . $query_params, $client_params);
+//            }
+            $res = $client->request($method, $url);
 
             $response = ($format != 'json') ? $res->getBody() : json_decode($res->getBody(), true);
 
@@ -93,7 +99,7 @@ class RedmineRepository
         }
         return $response;
     }
-    
+
 //HTTP request()
 //    public function request()
 //    {
