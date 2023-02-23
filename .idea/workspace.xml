@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3403da03-f0c8-4a73-9094-15bcc35c7730" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/redmineIntegration/database/migrations/2023_02_23_144938_issues.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redmineIntegration/database/migrations/2023_02_23_145006_projects.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmineIntegration/app/Http/Controllers/RepoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmineIntegration/app/Http/Controllers/RepoController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmineIntegration/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmineIntegration/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -242,7 +242,7 @@
       <workItem from="1677045903435" duration="2003000" />
       <workItem from="1677055691002" duration="4894000" />
       <workItem from="1677069260826" duration="7078000" />
-      <workItem from="1677151727610" duration="11590000" />
+      <workItem from="1677151727610" duration="12341000" />
     </task>
     <servers />
   </component>
