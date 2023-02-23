@@ -38,8 +38,6 @@ class RedmineRepository
         $this->issue_id = $issue_id;
     }
 
-    //todo:U teoriji mozemo samo pozivati redmine_request/gitlab_request bez da koristimo get_projects ili get_users jer unutar redmine_request/gitlab_request mi vec odredjujemo koji endpoint cemo zvati
-
     public function request()
     {
         try {
@@ -76,7 +74,10 @@ class RedmineRepository
             //Url for all the projects
             //"https://pm.icbtech.rs/redmine/projects.json?0=122.json" Ignorisace ovo posle ? i vratice sve projekete
             $url = $redmine_url . '/' . $this->endpoint . '.' . $format;
-
+            //URL offset and limit
+            if (isset($this->params['offset']) and isset($this->params['limit'])) {
+                $url = $redmine_url . '/' . $this->endpoint . '.' . $format . '?offset=' . $this->params['offset'] . '&limit=' . $this->params['limit'];
+            }
             //URL for single project
             $single_url = "";
             if (isset($this->params['single'])) {
@@ -90,10 +91,6 @@ class RedmineRepository
             //URL for single project and trackers and issue_categories
             if (isset($this->params['trackers']) and isset($this->params['issue_categories'])) {
                 $url = $single_url . '?include=trackers,issue_categories';
-            }
-
-            if (isset($this->params['offset']) and isset($this->params['limit'])) {
-                $url = $redmine_url . '/' . $this->endpoint . '.' . $format . '?offset=' . $this->params['offset'] . '&limit=' . $this->params['limit'];
             }
 
             $res = $client->request($this->method, $url);

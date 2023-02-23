@@ -42,13 +42,14 @@ class RepoController extends Controller
      */
     public function get_projects()
     {
-        return $this->callRepo('redmine.url',
+        return $this->callRepo(
+            'redmine.url',
             'projects',
             'json',
             'GET',
             [
-                'offset' => 100,
-                'limit' => 10
+                'offset' => 0,
+                'limit' => 100
             ]
         );
     }
@@ -58,7 +59,8 @@ class RepoController extends Controller
      */
     public function get_single_project(int $project_id)
     {
-        return $this->callRepo('redmine.url',
+        return $this->callRepo(
+            'redmine.url',
             'projects',
             'json',
             'GET',
@@ -82,7 +84,16 @@ class RepoController extends Controller
      */
     public function get_issues()
     {
-        return $this->callRepo('redmine.url', 'issues');
+        return $this->callRepo(
+            'redmine.url',
+            'issues',
+            'json',
+            'GET',
+            [
+                'offset' => 0,
+                'limit' => 1521
+            ]
+        );
     }
 
     public function get_agile_info()
