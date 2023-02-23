@@ -42,7 +42,31 @@ class RepoController extends Controller
      */
     public function get_projects()
     {
-        return $this->callRepo('redmine.url', 'projects');
+        return $this->callRepo('redmine.url',
+            'projects',
+            'json',
+            'GET',
+            [
+                'offset' => 100,
+                'limit' => 10
+            ]
+        );
+    }
+
+    /**
+     * @throws \Exception
+     */
+    public function get_single_project(int $project_id)
+    {
+        return $this->callRepo('redmine.url',
+            'projects',
+            'json',
+            'GET',
+            [
+                'single' => $project_id,
+                'trackers' => 'trackers',
+                'issue_categories' => 'issue_categories',
+            ]);
     }
 
     /**

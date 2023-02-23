@@ -39,6 +39,7 @@ class RedmineRepository
     }
 
     //todo:U teoriji mozemo samo pozivati redmine_request/gitlab_request bez da koristimo get_projects ili get_users jer unutar redmine_request/gitlab_request mi vec odredjujemo koji endpoint cemo zvati
+
     public function request()
     {
         try {
@@ -46,9 +47,12 @@ class RedmineRepository
             $redmine_api_key = env('REDMINE_API_KEY');
             $format = $this->format;
 
-            if (isset($this->params['format'])) {
-                $format = $this->params['format'];
-            }
+//            if (isset($this->params['format'])) {
+//                $format = $this->params['format'];
+//            }
+//            if ($this->post_data) {
+//                $client_params['body'] = json_encode($this->post_data);
+//            }
 
             $client_params = [
                 'Content-Type' => 'application/json',
@@ -61,31 +65,38 @@ class RedmineRepository
                 'headers' => $client_params, //This is how you put data into header
             ]);
 
-            if ($this->post_data) {
-                $client_params['body'] = json_encode($this->post_data);
-            }
-
             $query_params = [];
-            if ($this->params) {
-                foreach ($this->params as $key => $param) {
-                    $query_params[] = $key . '=' . $param;
-                }
+//            if ($this->params) {
+//                foreach ($this->params as $key => $param) {
+//                    $query_params[] = $key . '=' . $param;
+//                }
+//            }
+//            $query_params = implode('&', $query_params);
+
+            //Url for all the projects
+            //"https://pm.icbtech.rs/redmine/projects.json?0=122.json" Ignorisace ovo posle ? i vratice sve projekete
+            $url = $redmine_url . '/' . $this->endpoint . '.' . $format;
+
+            //URL for single project
+            $single_url = "";
+            if (isset($this->params['single'])) {
+                $single_url = $redmine_url . '/' . $this->endpoint . '/' . $this->params['single'] . '.' . $format;
+                $url = $single_url;
+            }
+            //URL for single project and trackers
+            if (isset($this->params['trackers'])) {
+                $url = $single_url . '?include=trackers';
+            }
+            //URL for single project and trackers and issue_categories
+            if (isset($this->params['trackers']) and isset($this->params['issue_categories'])) {
+                $url = $single_url . '?include=trackers,issue_categories';
             }
 
-            $query_params = implode('&', $query_params);
-            $method = $this->method;
-            $url = "";
+            if (isset($this->params['offset']) and isset($this->params['limit'])) {
+                $url = $redmine_url . '/' . $this->endpoint . '.' . $format . '?offset=' . $this->params['offset'] . '&limit=' . $this->params['limit'];
+            }
 
-            $query_params = empty($this->params) ? '' : http_build_query($this->params);
-            $url = $redmine_url . '/' . $this->endpoint . '.' . $format . ($query_params ? '?' . $query_params : '');
-//            if (empty($this->params)) {
-//                $url = $redmine_url . '/' . $this->endpoint . '.' . $format;
-//            } else {
-//                $url = $redmine_url . '/' . $this->endpoint . '.' . $format . '?' . $query_params;
-////                $res = $client->request($this->method, $redmine_url . '/' . $this->endpoint . '.' . $format . '?' . $query_params, $client_params);
-//            }
-            $res = $client->request($method, $url);
-
+            $res = $client->request($this->method, $url);
             $response = ($format != 'json') ? $res->getBody() : json_decode($res->getBody(), true);
 
         } catch (ClientException $e) {
