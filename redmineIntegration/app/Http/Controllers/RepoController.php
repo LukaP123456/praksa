@@ -90,8 +90,8 @@ class RepoController extends Controller
             'json',
             'GET',
             [
-                'offset' => 0,
-                'limit' => 1521
+                'offset' => 1000,
+                'limit' => 100//iako je 1k 100 je max
             ]
         );
     }

@@ -22,4 +22,8 @@ Route::get('/BaseAgileInfo', [RepoController::class, 'get_agile_info']);//todo:N
 Route::get('/BaseGetUsers', [RepoController::class, 'get_users']);//todo:Ne radi
 Route::get('/BaseGetTimeEntries', [RepoController::class, 'get_time_entries']);
 
+Route::get('/info', function () {
+    return phpinfo();
+});
+
 
