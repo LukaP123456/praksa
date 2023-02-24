@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 
+use App\Models\Issues;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\GuzzleException;
@@ -105,7 +106,26 @@ class RedmineRepository
             Log::error($e);
             throw new \Exception($e);
         }
-        return $response;
+        $this->save_response($response);
+    }
+
+    private function save_response(array $response)
+    {
+        for ($i = 0; $i < count($response) - 1; $i++) {
+            $issue = Issues::create([
+                'redmine_id' => $response['issues'][$i]['id'],
+                'project_id' => $response['issues'][$i]['project']['id'],
+                'tracker_id' => $response['issues'][$i]['tracker']['id'],
+                'tracker' => $response['issues'][$i]['tracker']['name'],
+                'title' => $response['issues'][$i]['subject'],
+                'description' => $response['issues'][$i]['description'],
+                'assignee_id' => $response['issues'][$i]['assigned_to']['id'],
+                'assignee' => $response['issues'][$i]['assigned_to']['name'],
+                'created_at' => now(),
+                'updated_at' => null,
+            ]);
+            dd($issue);
+        }
     }
 
 //HTTP request()

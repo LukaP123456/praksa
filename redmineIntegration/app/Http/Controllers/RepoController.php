@@ -5,9 +5,22 @@ namespace App\Http\Controllers;
 use App\Repositories\BaseRepository;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Psr\Http\Message\StreamInterface;
 
 class RepoController extends Controller
 {
+    /**
+     * Generates the array with all the data needed to instantiate a Repository class
+     * @param $integration
+     * @param $endpoint
+     * @param $format
+     * @param $method
+     * @param $params
+     * @param $post_data
+     * @param $data
+     * @param $issue_id
+     * @return array
+     */
     private function generateRepoData($integration, $endpoint, $format, $method, $params, $post_data, $data, $issue_id): array
     {
         return [
@@ -22,7 +35,21 @@ class RepoController extends Controller
         ];
     }
 
+
     /**
+     * Calls the wanted Repository class based on the $integration, temporarily $integration is just a string value like
+     * redmine.url or clockify.url
+     * The $baseRepo variable returns an instance of a class based on the $integration value
+     *
+     * @param $integration
+     * @param $endpoint
+     * @param $format
+     * @param $method
+     * @param $params
+     * @param $post_data
+     * @param $data
+     * @param $issue_id
+     * @return array|mixed|StreamInterface
      * @throws \Exception
      */
     private function callRepo($integration, $endpoint, $format = 'json', $method = "GET", $params = [], $post_data = [], $data = [], $issue_id = 0)
@@ -80,6 +107,8 @@ class RepoController extends Controller
     }
 
     /**
+     * 100 is the max number of issues it can return
+     * Some issues don't have the assigned_to value
      * @throws \Exception
      */
     public function get_issues()
@@ -90,8 +119,8 @@ class RepoController extends Controller
             'json',
             'GET',
             [
-                'offset' => 1000,
-                'limit' => 100//iako je 1k 100 je max
+                'offset' => 0,
+                'limit' => 10
             ]
         );
     }

@@ -4,6 +4,12 @@ namespace App\Repositories;
 
 class BaseRepository
 {
+    /**
+     * Function which returns an instance of Repository class based on the inputted integration value.
+     *
+     * @param array $RepoData
+     * @return ClockifyRepository|GitlabRepository|RedmineRepository|string
+     */
     public function CallRepo(array $RepoData)
     {
         switch ($RepoData['integration']) {
@@ -40,43 +46,43 @@ class BaseRepository
         }
     }
 
-    public function get_projects(array $RepoData)
-    {
-        $this->CallRepo($RepoData)->get_projects();
-    }
-
-    public function get_agile_info(array $RepoData)
-    {
-        $this->CallRepo($RepoData)->get_agile_info();
-    }
-
-    public function get_issues(array $RepoData)
-    {
-        $this->CallRepo($RepoData)->get_issues();
-    }
-
-    public function get_users(array $RepoData)
-    {
-        $this->CallRepo($RepoData)->get_users();
-    }
-
-    public function get_time_entries(array $RepoData)
-    {
-        $this->CallRepo($RepoData)->get_time_entries();
-    }
-
-    public function get_related_issues(array $RepoData)
-    {
-        $this->CallRepo($RepoData)->get_related_issues();
-    }
-
-    public function get_statuses(array $RepoData)
-    {
-        $this->CallRepo($RepoData)->get_statuses();
-    }
-
-    public function update_issue(array $RepoData)
-    {
-        $this->CallRepo($RepoData)->update_issue();
-    }
+//    public function get_projects(array $RepoData)
+//    {
+//        $this->CallRepo($RepoData)->get_projects();
+//    }
+//
+//    public function get_agile_info(array $RepoData)
+//    {
+//        $this->CallRepo($RepoData)->get_agile_info();
+//    }
+//
+//    public function get_issues(array $RepoData)
+//    {
+//        $this->CallRepo($RepoData)->get_issues();
+//    }
+//
+//    public function get_users(array $RepoData)
+//    {
+//        $this->CallRepo($RepoData)->get_users();
+//    }
+//
+//    public function get_time_entries(array $RepoData)
+//    {
+//        $this->CallRepo($RepoData)->get_time_entries();
+//    }
+//
+//    public function get_related_issues(array $RepoData)
+//    {
+//        $this->CallRepo($RepoData)->get_related_issues();
+//    }
+//
+//    public function get_statuses(array $RepoData)
+//    {
+//        $this->CallRepo($RepoData)->get_statuses();
+//    }
+//
+//    public function update_issue(array $RepoData)
+//    {
+//        $this->CallRepo($RepoData)->update_issue();
+//    }
 }

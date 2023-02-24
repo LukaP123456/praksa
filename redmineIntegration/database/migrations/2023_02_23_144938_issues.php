@@ -12,11 +12,14 @@ return new class extends Migration {
     {
         Schema::create('issues', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
+            $table->integer('redmine_id');
+            $table->foreignId('project_id')->constrained()->onDelete('cascade');
+            $table->integer('tracker_id');
+            $table->string('tracker');
+            $table->string('title');
+            $table->string('description')->nullable();
+            $table->integer('assignee_id')->nullable();
+            $table->string('assignee')->nullable();
             $table->timestamps();
         });
     }
