@@ -126,8 +126,10 @@ class RedmineRepository
         if ($endpoint == 'issues') {
             for ($i = 0; $i < count($response['issues']); $i++) {
                 $project_id = Projects::where('redmine_id', '=', $response['issues'][$i]['project']['id'])->firstOrFail()->pluck('id');
+
                 $assignee_id = $response['issues'][$i]['assigned_to']['id'] ?? null;
                 $assignee = $response['issues'][$i]['assigned_to']['name'] ?? null;
+
                 $issue = Issues::create([
                     'redmine_id' => $response['issues'][$i]['id'],
                     'project_id' => $project_id[$i],

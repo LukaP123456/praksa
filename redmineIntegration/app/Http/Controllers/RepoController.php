@@ -76,7 +76,7 @@ class RepoController extends Controller
             'GET',
             [
                 'offset' => 0,
-                'limit' => 100
+                'limit' => 35
             ]
         );
     }
@@ -120,7 +120,7 @@ class RepoController extends Controller
             'GET',
             [
                 'offset' => 0,
-                'limit' => 10
+                'limit' => 100
             ]
         );
     }

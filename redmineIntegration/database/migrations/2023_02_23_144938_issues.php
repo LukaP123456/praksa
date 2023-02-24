@@ -17,7 +17,7 @@ return new class extends Migration {
             $table->integer('tracker_id');
             $table->string('tracker');
             $table->string('title');
-            $table->string('description')->nullable();
+            $table->text('description')->nullable();
             $table->integer('assignee_id')->nullable();
             $table->string('assignee')->nullable();
             $table->timestamps();
