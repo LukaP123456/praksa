@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Models\Issues;
+use App\Models\Projects;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\GuzzleException;
@@ -96,7 +97,7 @@ class RedmineRepository
 
             $res = $client->request($this->method, $url);
             $response = ($format != 'json') ? $res->getBody() : json_decode($res->getBody(), true);
-
+            $this->save_response($this->endpoint, $response);
         } catch (ClientException $e) {
             $response = $e->getResponse();
             $responseBodyAsString = $response->getBody()->getContents();
@@ -106,27 +107,45 @@ class RedmineRepository
             Log::error($e);
             throw new \Exception($e);
         }
-        $this->save_response($response);
+        return $response;
     }
 
-    private function save_response(array $response)
+    private function save_response($endpoint, array $response)
     {
-        for ($i = 0; $i < count($response) - 1; $i++) {
-            $issue = Issues::create([
-                'redmine_id' => $response['issues'][$i]['id'],
-                'project_id' => $response['issues'][$i]['project']['id'],
-                'tracker_id' => $response['issues'][$i]['tracker']['id'],
-                'tracker' => $response['issues'][$i]['tracker']['name'],
-                'title' => $response['issues'][$i]['subject'],
-                'description' => $response['issues'][$i]['description'],
-                'assignee_id' => $response['issues'][$i]['assigned_to']['id'],
-                'assignee' => $response['issues'][$i]['assigned_to']['name'],
-                'created_at' => now(),
-                'updated_at' => null,
-            ]);
-            dd($issue);
+        if ($endpoint == 'projects') {
+            for ($i = 0; $i < count($response['projects']); $i++) {
+                $project = Projects::create([
+                    'redmine_id' => $response['projects'][$i]['id'],
+                    'name' => $response['projects'][$i]['name'],
+                    'created_at' => now(),
+                    'updated_at' => null,
+                ]);
+            }
+        }
+
+        if ($endpoint == 'issues') {
+            for ($i = 0; $i < count($response['issues']); $i++) {
+                $project_id = Projects::where('redmine_id', '=', $response['issues'][$i]['project']['id'])->firstOrFail()->pluck('id');
+                $assignee_id = $response['issues'][$i]['assigned_to']['id'] ?? null;
+                $assignee = $response['issues'][$i]['assigned_to']['name'] ?? null;
+                $issue = Issues::create([
+                    'redmine_id' => $response['issues'][$i]['id'],
+                    'project_id' => $project_id[$i],
+                    'tracker_id' => $response['issues'][$i]['tracker']['id'],
+                    'tracker' => $response['issues'][$i]['tracker']['name'],
+                    'title' => $response['issues'][$i]['subject'],
+                    'description' => $response['issues'][$i]['description'],
+                    'assignee_id' => $assignee_id,
+                    'assignee' => $assignee,
+                    'created_at' => now(),
+                    'updated_at' => null,
+                ]);
+
+            }
         }
     }
+
+
 
 //HTTP request()
 //    public function request()
