@@ -40,83 +40,80 @@ class RedmineRepository
         $this->issue_id = $issue_id;
     }
 
-    public function request()
+    public function repo_request()
     {
-        try {
-            $redmine_url = env('REDMINE_URL');
-            $redmine_api_key = env('REDMINE_API_KEY');
-            $format = $this->format;
+        $redmine_url = env('REDMINE_URL');
+        $redmine_api_key = env('REDMINE_API_KEY');
+        $format = $this->format;
 
-//            if (isset($this->params['format'])) {
-//                $format = $this->params['format'];
-//            }
-//            if ($this->post_data) {
-//                $client_params['body'] = json_encode($this->post_data);
-//            }
+        $client_params = [
+            'Content-Type' => 'application/json',
+            'timeout' => 30,
+            'connect_timeout' => 30,
+            'X-Redmine-API-Key' => $redmine_api_key
+        ];
 
-            $client_params = [
-                'Content-Type' => 'application/json',
-                'timeout' => 30,
-                'connect_timeout' => 30,
-                'X-Redmine-API-Key' => $redmine_api_key
-            ];
+        $client = new Client([
+            'headers' => $client_params, //This is how you put data into header
+        ]);
 
-            $client = new Client([
-                'headers' => $client_params, //This is how you put data into header
-            ]);
+        //Url for all the projects
+        //"https://pm.icbtech.rs/redmine/projects.json?0=122.json" Ignorisace ovo posle ? i vratice sve projekete
+        $url = $redmine_url . '/' . $this->endpoint . '.' . $format;
 
-            $query_params = [];
-//            if ($this->params) {
-//                foreach ($this->params as $key => $param) {
-//                    $query_params[] = $key . '=' . $param;
-//                }
-//            }
-//            $query_params = implode('&', $query_params);
+        //Start pagination
+        if (isset($this->params['paginate'])) {
+            $projects = [];
+            $offset = 0;
+            do {
+                $params = [
+                    'offset' => $offset,
+                    'limit' => 25,
+                ];
+                $url = $redmine_url . '/' . $this->endpoint . '.' . $format . '?' . http_build_query($params);
+                $res = $client->request($this->method, $url);
+                $response = ($format != 'json') ? $res->getBody() : json_decode($res->getBody(), true);
+                $offset += $params['limit'];
 
-            //Url for all the projects
-            //"https://pm.icbtech.rs/redmine/projects.json?0=122.json" Ignorisace ovo posle ? i vratice sve projekete
-            $url = $redmine_url . '/' . $this->endpoint . '.' . $format;
-            //URL offset and limit
-            if (isset($this->params['offset']) and isset($this->params['limit'])) {
-                $url = $redmine_url . '/' . $this->endpoint . '.' . $format . '?offset=' . $this->params['offset'] . '&limit=' . $this->params['limit'];
-            }
-            //URL for single project
-            $single_url = "";
-            if (isset($this->params['single'])) {
-                $single_url = $redmine_url . '/' . $this->endpoint . '/' . $this->params['single'] . '.' . $format;
-                $url = $single_url;
-            }
-            //URL for single project and trackers
-            if (isset($this->params['trackers'])) {
-                $url = $single_url . '?include=trackers';
-            }
-            //URL for single project and trackers and issue_categories
-            if (isset($this->params['trackers']) and isset($this->params['issue_categories'])) {
-                $url = $single_url . '?include=trackers,issue_categories';
-            }
+                $projects = array_merge($projects, $response[$this->endpoint]);
+            } while (count($response[$this->endpoint]) > 0);
 
-            $res = $client->request($this->method, $url);
-            $response = ($format != 'json') ? $res->getBody() : json_decode($res->getBody(), true);
-            $this->save_response($this->endpoint, $response);
-        } catch (ClientException $e) {
-            $response = $e->getResponse();
-            $responseBodyAsString = $response->getBody()->getContents();
-            Log::error($e);
-            throw new \Exception($responseBodyAsString);
-        } catch (\Exception|GuzzleException $e) {
-            Log::error($e);
-            throw new \Exception($e);
+            $this->save_response('issues', $projects);
+            return $projects;
         }
+
+        //URL offset and limit
+        if (isset($this->params['offset']) and isset($this->params['limit'])) {
+            $url = $url . '?offset=' . $this->params['offset'] . '&limit=' . $this->params['limit'];
+        }
+
+        //URL for single project
+        $single_url = "";
+        if (isset($this->params['single'])) {
+            $single_url = $redmine_url . '/' . $this->endpoint . '/' . $this->params['single'] . '.' . $format;
+            $url = $single_url;
+        }
+        //URL for single project and trackers
+        if (isset($this->params['trackers'])) {
+            $url = $single_url . '?include=trackers';
+        }
+        //URL for single project and trackers and issue_categories
+        if (isset($this->params['trackers']) and isset($this->params['issue_categories'])) {
+            $url = $single_url . '?include=trackers,issue_categories';
+        }
+
+        $res = $client->request($this->method, $url);
+        $response = ($format != 'json') ? $res->getBody() : json_decode($res->getBody(), true);
         return $response;
     }
 
     private function save_response($endpoint, array $response)
     {
         if ($endpoint == 'projects') {
-            for ($i = 0; $i < count($response['projects']); $i++) {
+            for ($i = 0; $i < count($response); $i++) {
                 $project = Projects::create([
-                    'redmine_id' => $response['projects'][$i]['id'],
-                    'name' => $response['projects'][$i]['name'],
+                    'redmine_id' => $response[$i]['id'],
+                    'name' => $response[$i]['name'],
                     'created_at' => now(),
                     'updated_at' => null,
                 ]);
@@ -124,25 +121,27 @@ class RedmineRepository
         }
 
         if ($endpoint == 'issues') {
-            for ($i = 0; $i < count($response['issues']); $i++) {
-                $project_id = Projects::where('redmine_id', '=', $response['issues'][$i]['project']['id'])->firstOrFail()->pluck('id');
+            for ($i = 0; $i < count($response); $i++) {
+                $project = Projects::where('redmine_id', '=', $response[$i]['project']['id'])->first();
+                if (!$project) {
+                    continue;
+                }
 
-                $assignee_id = $response['issues'][$i]['assigned_to']['id'] ?? null;
-                $assignee = $response['issues'][$i]['assigned_to']['name'] ?? null;
+                $assignee_id = $response[$i]['assigned_to']['id'] ?? null;
+                $assignee = $response[$i]['assigned_to']['name'] ?? null;
 
                 $issue = Issues::create([
-                    'redmine_id' => $response['issues'][$i]['id'],
-                    'project_id' => $project_id[$i],
-                    'tracker_id' => $response['issues'][$i]['tracker']['id'],
-                    'tracker' => $response['issues'][$i]['tracker']['name'],
-                    'title' => $response['issues'][$i]['subject'],
-                    'description' => $response['issues'][$i]['description'],
+                    'redmine_id' => $response[$i]['id'],
+                    'project_id' => $project->id,
+                    'tracker_id' => $response[$i]['tracker']['id'],
+                    'tracker' => $response[$i]['tracker']['name'],
+                    'title' => $response[$i]['subject'],
+                    'description' => $response[$i]['description'],
                     'assignee_id' => $assignee_id,
                     'assignee' => $assignee,
                     'created_at' => now(),
                     'updated_at' => null,
                 ]);
-
             }
         }
     }

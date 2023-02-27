@@ -35,7 +35,6 @@ class RepoController extends Controller
         ];
     }
 
-
     /**
      * Calls the wanted Repository class based on the $integration, temporarily $integration is just a string value like
      * redmine.url or clockify.url
@@ -56,12 +55,13 @@ class RepoController extends Controller
     {
         $baseRepo = new BaseRepository();
         $repoData = $this->generateRepoData($integration, $endpoint, $format, $method, $params, $post_data, $data, $issue_id);
-        try {
-            return $baseRepo->CallRepo($repoData)->request();
-        } catch (\Exception $e) {
-            Log::error($e);
-            throw new \Exception($e);
-        }
+        return $baseRepo->CallRepo($repoData)->repo_request();
+
+//        try {
+//        } catch (\Exception $e) {
+//            Log::error($e);
+//            throw new \Exception($e);
+//        }
     }
 
     /**
@@ -75,8 +75,7 @@ class RepoController extends Controller
             'json',
             'GET',
             [
-                'offset' => 0,
-                'limit' => 35
+                'paginate' => 1
             ]
         );
     }
@@ -119,8 +118,7 @@ class RepoController extends Controller
             'json',
             'GET',
             [
-                'offset' => 0,
-                'limit' => 100
+                'paginate' => 1
             ]
         );
     }
