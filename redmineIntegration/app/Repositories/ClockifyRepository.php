@@ -35,7 +35,7 @@ class ClockifyRepository
     }
 
 
-    public function request()
+    public function repo_request()
     {
         $clockify_url = config('redmineintegration.clockify_url');
         $clockify_api_key = config('redmineintegration.clockify_api_key');

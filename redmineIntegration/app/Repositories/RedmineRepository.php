@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 
+use App\Jobs\CompareData;
 use App\Models\Issues;
 use App\Models\Projects;
 use GuzzleHttp\Client;
@@ -78,7 +79,7 @@ class RedmineRepository
                 $projects = array_merge($projects, $response[$this->endpoint]);
             } while (count($response[$this->endpoint]) > 0);
 
-            $this->save_response('issues', $projects);
+//            $this->save_response($this->endpoint, $projects);
             return $projects;
         }
 
@@ -114,8 +115,8 @@ class RedmineRepository
                 $project = Projects::create([
                     'redmine_id' => $response[$i]['id'],
                     'name' => $response[$i]['name'],
-                    'created_at' => now(),
-                    'updated_at' => null,
+                    'created_at' => $response[$i]['created_on'],
+                    'updated_at' => $response[$i]['updated_on'],
                 ]);
             }
         }
@@ -145,7 +146,6 @@ class RedmineRepository
             }
         }
     }
-
 
 
 //HTTP request()

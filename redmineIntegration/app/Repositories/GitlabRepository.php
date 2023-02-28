@@ -40,7 +40,7 @@ class GitlabRepository
     }
 
 
-    public function request($gitlab_api_key, $endpoint, $params = [], $method = "GET", $post_data = null)
+    public function repo_request($gitlab_api_key, $endpoint, $params = [], $method = "GET", $post_data = null)
     {
         $gitlab_url = config('redmineintegration.gitlab_url');
         $client = new Client();

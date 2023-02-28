@@ -21,7 +21,7 @@ class RepoController extends Controller
      * @param $issue_id
      * @return array
      */
-    private function generateRepoData($integration, $endpoint, $format, $method, $params, $post_data, $data, $issue_id): array
+    public function generateRepoData($integration, $endpoint, $format, $method, $params, $post_data, $data, $issue_id): array
     {
         return [
             'integration' => $integration,
@@ -51,7 +51,7 @@ class RepoController extends Controller
      * @return array|mixed|StreamInterface
      * @throws \Exception
      */
-    private function callRepo($integration, $endpoint, $format = 'json', $method = "GET", $params = [], $post_data = [], $data = [], $issue_id = 0)
+    public function callRepo($integration, $endpoint, $format = 'json', $method = "GET", $params = [], $post_data = [], $data = [], $issue_id = 0)
     {
         $baseRepo = new BaseRepository();
         $repoData = $this->generateRepoData($integration, $endpoint, $format, $method, $params, $post_data, $data, $issue_id);
