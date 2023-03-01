@@ -5,14 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3403da03-f0c8-4a73-9094-15bcc35c7730" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/redmineIntegration/app/Jobs/CompareData.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmineIntegration/app/Console/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmineIntegration/app/Console/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmineIntegration/app/Http/Controllers/RepoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmineIntegration/app/Http/Controllers/RepoController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmineIntegration/app/Repositories/ClockifyRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmineIntegration/app/Repositories/ClockifyRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmineIntegration/app/Repositories/GitlabRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmineIntegration/app/Repositories/GitlabRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmineIntegration/app/Repositories/RedmineRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmineIntegration/app/Repositories/RedmineRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmineIntegration2/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/redmineIntegration/app/Jobs/CompareData.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmineIntegration/app/Jobs/CompareData.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -255,7 +249,8 @@
       <workItem from="1677237057063" duration="3044000" />
       <workItem from="1677240156935" duration="6856000" />
       <workItem from="1677496397623" duration="13575000" />
-      <workItem from="1677573824154" duration="20783000" />
+      <workItem from="1677573824154" duration="21004000" />
+      <workItem from="1677674763526" duration="1806000" />
     </task>
     <servers />
   </component>

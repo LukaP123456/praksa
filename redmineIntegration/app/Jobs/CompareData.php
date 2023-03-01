@@ -51,11 +51,9 @@ class CompareData implements ShouldQueue
                 'paginate' => 1
             ]
         );
-        info($apiDataProjects);
 
         for ($i = 0; $i < count($apiDataProjects); $i++) {
-            info($apiDataProjects[$i]['id']);
-            $Data = Projects::firstOrNew(
+            $dataProjects = Projects::firstOrNew(
                 ['redmine_id' => $apiDataProjects[$i]['id']],
                 [
                     'redmine_id' => $apiDataProjects[$i]['id'],
@@ -64,8 +62,42 @@ class CompareData implements ShouldQueue
                     'updated_at' => $apiDataProjects[$i]['updated_on'],
                 ]
             );
-            $Data->save();
+            $dataProjects->save();
+            if (!empty($dataProjects)) {
+                info('Projects success');
+            }
         }
+        info($dataProjects);
+
+        for ($i = 0; $i < count($apiDataIssues); $i++) {
+            $assignee_id = $response[$i]['assigned_to']['id'] ?? null;
+            $assignee = $response[$i]['assigned_to']['name'] ?? null;
+            $project = Projects::where('redmine_id', '=', $apiDataIssues[$i]['project']['id'])->first();
+
+            $dataIssues = Issues::firstOrNew(
+                ['redmine_id' => $apiDataIssues[$i]['id']],
+                [
+                    'redmine_id' => $apiDataIssues[$i]['id'],
+//                    'project_id' => $apiDataIssues[$i]['project']['id'],
+                    'project_id' => $project->id,
+                    'tracker_id' => $apiDataIssues[$i]['tracker']['id'],
+                    'tracker' => $apiDataIssues[$i]['tracker']['name'],
+                    'title' => $apiDataIssues[$i]['subject'],
+                    'description' => $apiDataIssues[$i]['description'],
+                    'assignee_id' => $assignee_id,
+                    'assignee' => $assignee,
+                    'created_at' => $apiDataIssues[$i]['created_on'],
+                    'updated_at' => $apiDataIssues[$i]['updated_on'],
+                ]
+            );
+            $dataIssues->save();
+
+            if (!empty($dataIssues)) {
+                info('Issues success');
+            }
+        }
+
+        info($dataIssues);
 
 //        for ($i = 0; $i < count($apiDataIssues); $i++) {
 //            info($apiDataIssues[$i]['id']);
