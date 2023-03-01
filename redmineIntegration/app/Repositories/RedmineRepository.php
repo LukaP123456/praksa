@@ -62,6 +62,10 @@ class RedmineRepository
         //"https://pm.icbtech.rs/redmine/projects.json?0=122.json" Ignorisace ovo posle ? i vratice sve projekete
         $url = $redmine_url . '/' . $this->endpoint . '.' . $format;
 
+        if (isset($this->params['updated_on']) and $this->endpoint == 'issues') {
+            $url .= '?offset=0&limit=100' . '?updated_on=' . ($this->params['updated_on']);
+        }
+
         //Start pagination
         if (isset($this->params['paginate'])) {
             $projects = [];
@@ -71,7 +75,13 @@ class RedmineRepository
                     'offset' => $offset,
                     'limit' => 25,
                 ];
-                $url = $redmine_url . '/' . $this->endpoint . '.' . $format . '?' . http_build_query($params);
+
+                $url = $redmine_url . '/' . $this->endpoint . '.' . $format . '?' . http_build_query($params) . (isset($this->params['updated_on']) ? '&updated_on=' . $this->params['updated_on'] : "");
+//
+//                if (isset($this->params['updated_on']) and $this->endpoint == 'issues') {
+//                    $url = $url . '?updated_on=' . $this->params['updated_on'];
+//                }
+                
                 $res = $client->request($this->method, $url);
                 $response = ($format != 'json') ? $res->getBody() : json_decode($res->getBody(), true);
                 $offset += $params['limit'];
