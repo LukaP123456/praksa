@@ -62,6 +62,7 @@ class RedmineRepository
         //"https://pm.icbtech.rs/redmine/projects.json?0=122.json" Ignorisace ovo posle ? i vratice sve projekete
         $url = $redmine_url . '/' . $this->endpoint . '.' . $format;
 
+        //Get some issues based on the updated_on date
         if (isset($this->params['updated_on']) and $this->endpoint == 'issues') {
             $url .= '?offset=0&limit=100' . '?updated_on=' . ($this->params['updated_on']);
         }
@@ -76,18 +77,16 @@ class RedmineRepository
                     'limit' => 25,
                 ];
 
+                //If params['updated_on'] is set and the endpoint is issues the returned data will be after or before the inputted date
                 $url = $redmine_url . '/' . $this->endpoint . '.' . $format . '?' . http_build_query($params) . (isset($this->params['updated_on']) ? '&updated_on=' . $this->params['updated_on'] : "");
-//
-//                if (isset($this->params['updated_on']) and $this->endpoint == 'issues') {
-//                    $url = $url . '?updated_on=' . $this->params['updated_on'];
-//                }
-                
                 $res = $client->request($this->method, $url);
+
+                //If the set format is not json then it can be xml in that case data from the api won't be formated into json
                 $response = ($format != 'json') ? $res->getBody() : json_decode($res->getBody(), true);
                 $offset += $params['limit'];
 
                 $projects = array_merge($projects, $response[$this->endpoint]);
-            } while (count($response[$this->endpoint]) > 0);
+            } while (count($response[$this->endpoint]) > 0);//do loop will be executed as long as there is some sort of data being returned from the api
 
 //            $this->save_response($this->endpoint, $projects);
             return $projects;
