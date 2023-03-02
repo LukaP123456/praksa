@@ -43,32 +43,27 @@ class RedmineRepository
 
     public function repo_request()
     {
-        $redmine_url = env('REDMINE_URL');
-        $redmine_api_key = env('REDMINE_API_KEY');
-        $format = $this->format;
-
         $client_params = [
             'Content-Type' => 'application/json',
             'timeout' => 30,
             'connect_timeout' => 30,
-            'X-Redmine-API-Key' => $redmine_api_key
+            'X-Redmine-API-Key' => env('REDMINE_API_KEY')
         ];
 
-        $client = new Client([
-            'headers' => $client_params, //This is how you put data into header
-        ]);
+        $client = new Client(['headers' => $client_params]);//This is how you put data into header
+
+        $redmine_url = env('REDMINE_URL');
+        $format = $this->format;
+        $endpoint = $this->endpoint;
+        $params = $this->params;
+        $method = $this->method;
 
         //Url for all the projects
         //"https://pm.icbtech.rs/redmine/projects.json?0=122.json" Ignorisace ovo posle ? i vratice sve projekete
-        $url = $redmine_url . '/' . $this->endpoint . '.' . $format;
-
-        //Get some issues based on the updated_on date
-        if (isset($this->params['updated_on']) and $this->endpoint == 'issues') {
-            $url .= '?offset=0&limit=100' . '?updated_on=' . ($this->params['updated_on']);
-        }
+        $url = $redmine_url . '/' . $endpoint . '.' . $format;
 
         //Start pagination
-        if (isset($this->params['paginate'])) {
+        if (isset($params['paginate'])) {
             $projects = [];
             $offset = 0;
             do {
@@ -78,41 +73,44 @@ class RedmineRepository
                 ];
 
                 //If params['updated_on'] is set and the endpoint is issues the returned data will be after or before the inputted date
-                $url = $redmine_url . '/' . $this->endpoint . '.' . $format . '?' . http_build_query($params) . (isset($this->params['updated_on']) ? '&updated_on=' . $this->params['updated_on'] : "");
-                $res = $client->request($this->method, $url);
+                $url = $redmine_url . '/' . $endpoint . '.' . $format . '?' . http_build_query($params) . (isset($this->params['updated_on']) ? '&updated_on=' . $this->params['updated_on'] : "");
+                $res = $client->request($method, $url);
 
                 //If the set format is not json then it can be xml in that case data from the api won't be formated into json
                 $response = ($format != 'json') ? $res->getBody() : json_decode($res->getBody(), true);
                 $offset += $params['limit'];
 
-                $projects = array_merge($projects, $response[$this->endpoint]);
-            } while (count($response[$this->endpoint]) > 0);//do loop will be executed as long as there is some sort of data being returned from the api
+                $projects = array_merge($projects, $response[$endpoint]);
+            } while (count($response[$endpoint]) > 0);//do loop will be executed as long as there is some sort of data being returned from the api
 
 //            $this->save_response($this->endpoint, $projects);
             return $projects;
         }
 
-        //URL offset and limit
-        if (isset($this->params['offset']) and isset($this->params['limit'])) {
-            $url = $url . '?offset=' . $this->params['offset'] . '&limit=' . $this->params['limit'];
+        //Get some issues based on the updated_on date
+        if (isset($params['updated_on']) and $endpoint == 'issues') {
+            $url .= '?offset=0&limit=100' . '?updated_on=' . ($params['updated_on']);
         }
-
+        //URL offset and limit
+        if (isset($params['offset']) and isset($params['limit'])) {
+            $url = $url . '?offset=' . $params['offset'] . '&limit=' . $params['limit'];
+        }
         //URL for single project
         $single_url = "";
-        if (isset($this->params['single'])) {
-            $single_url = $redmine_url . '/' . $this->endpoint . '/' . $this->params['single'] . '.' . $format;
+        if (isset($params['single'])) {
+            $single_url = $redmine_url . '/' . $endpoint . '/' . $params['single'] . '.' . $format;
             $url = $single_url;
         }
         //URL for single project and trackers
-        if (isset($this->params['trackers'])) {
+        if (isset($params['trackers'])) {
             $url = $single_url . '?include=trackers';
         }
         //URL for single project and trackers and issue_categories
-        if (isset($this->params['trackers']) and isset($this->params['issue_categories'])) {
+        if (isset($params['trackers']) and isset($params['issue_categories'])) {
             $url = $single_url . '?include=trackers,issue_categories';
         }
 
-        $res = $client->request($this->method, $url);
+        $res = $client->request($method, $url);
         $response = ($format != 'json') ? $res->getBody() : json_decode($res->getBody(), true);
         return $response;
     }
