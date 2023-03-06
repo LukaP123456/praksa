@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3403da03-f0c8-4a73-9094-15bcc35c7730" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redmineIntegration/app/Repositories/RedmineRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/redmineIntegration/app/Repositories/RedmineRepository.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -251,7 +250,10 @@
       <workItem from="1677496397623" duration="13575000" />
       <workItem from="1677573824154" duration="21004000" />
       <workItem from="1677674763526" duration="7783000" />
-      <workItem from="1677755895432" duration="8764000" />
+      <workItem from="1677755895432" duration="8936000" />
+      <workItem from="1677843664163" duration="77000" />
+      <workItem from="1678103851933" duration="1387000" />
+      <workItem from="1678108137762" duration="2000" />
     </task>
     <servers />
   </component>
