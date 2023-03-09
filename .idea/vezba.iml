@@ -135,6 +135,9 @@
       <excludeFolder url="file://$MODULE_DIR$/websocket_test/storage/framework/cache/data/c0" />
       <excludeFolder url="file://$MODULE_DIR$/websocket_test/storage/framework/cache/data/ec" />
       <excludeFolder url="file://$MODULE_DIR$/websocket_test/vendor" />
+      <excludeFolder url="file://$MODULE_DIR$/redmineIntegration/storage/framework/cache/data/c0" />
+      <excludeFolder url="file://$MODULE_DIR$/redmineIntegration/storage/framework/cache/data/ec" />
+      <excludeFolder url="file://$MODULE_DIR$/redmineIntegration/vendor" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

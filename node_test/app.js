@@ -1,5 +1,15 @@
-const _ = require('lodash')
+const http = require('http')
 
-const items = [1, [2, [3, [4]]]]
-const newItems = _.flattenDeep(items)
-console.log(newItems)
+// const server = http.createServer((req, res) => {
+//   res.end('Welcome')
+// })
+
+// Using Event Emitter API
+const server = http.createServer()
+// emits request event
+// subcribe to it / listen for it / respond to it
+server.on('request', (req, res) => {
+    res.end('Welcome')
+})
+
+server.listen(5000)

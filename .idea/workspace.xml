@@ -5,7 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3403da03-f0c8-4a73-9094-15bcc35c7730" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/node_test/13-event-emitter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_test/14-request-event.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_test/2-async-patterns/1-block.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_test/2-async-patterns/2-await-pattern.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_test/content/result-mind-grenade.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vezba.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vezba.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_test/1-event-loop-examples/1-red-files.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_test/1-event-loop-examples/1-read-files.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_test/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_test/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_test/content/result-sync.txt" beforeDir="false" afterPath="$PROJECT_DIR$/node_test/content/result-sync.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_test/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_test/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_test/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_test/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,24 +161,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;12.22.9&quot;,
-    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;12.20.55&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/snap/phpstorm/314/plugins/javascript-impl/jsLanguageServicesImpl/external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "javascript.nodejs.core.library.configured.version": "12.22.9",
+    "javascript.nodejs.core.library.typings.version": "12.20.55",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "ts.external.directory.path": "/snap/phpstorm/314/plugins/javascript-impl/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/redmine_repo" />
@@ -254,6 +265,10 @@
       <workItem from="1677843664163" duration="77000" />
       <workItem from="1678103851933" duration="1387000" />
       <workItem from="1678108137762" duration="2000" />
+      <workItem from="1678286028503" duration="1581000" />
+      <workItem from="1678362147551" duration="5346000" />
+      <workItem from="1678369331215" duration="103000" />
+      <workItem from="1678369440992" duration="2835000" />
     </task>
     <servers />
   </component>
