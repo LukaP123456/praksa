@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3403da03-f0c8-4a73-9094-15bcc35c7730" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/node_test/15-create-big-file.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_test/16-streams.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_test/17-http-stream.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_test/content/big.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_test/14-request-event.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_test/14-request-event.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_test/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_test/app.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -264,7 +258,7 @@
       <workItem from="1678362147551" duration="5346000" />
       <workItem from="1678369331215" duration="103000" />
       <workItem from="1678369440992" duration="3437000" />
-      <workItem from="1678448321449" duration="4458000" />
+      <workItem from="1678448321449" duration="5786000" />
     </task>
     <servers />
   </component>
